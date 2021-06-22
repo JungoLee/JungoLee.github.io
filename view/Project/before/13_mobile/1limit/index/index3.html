@@ -5,29 +5,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>jQuery Mobile</title>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-	<link rel="stylesheet" href="css/style3.css">
+	<link rel="stylesheet" href="./css/style3.css">
 
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/script3.js"></script>
+	<script src="./js/jquery-1.7.1.min.js"></script>
+	<script src="./js/script3.js"></script>
 </head>
 <body>
 
 	<div data-role="page" id="addCard"  >
 		<div data-role="none" style="background:#7858a6; color:#ffffff; border-top:0;" class="header">
 			<div class="center" data-role="none"><a href="#addCard" class="on">카드 추가</a><a href="#select_card" >잔액/기간 설정</a></div>
-			
+
 		</div>
-		
+
 		<div data-role="content" class="content">
-			
+
 			<img src="images/learn_card.gif" alt="emptycard"  class="add_card"/>
 			<div data-role="none"class="empty_box"></div>
-			
+
 		</div>
-		
+
 		<div data-role="footer" data-position="fixed" style="background:#ffffff">
 			<div data-role="navbar" id="navbar">
 				<ul >
@@ -39,14 +39,14 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div data-role="page" id="select_card"  >
 		<div data-role="none" style="background:#7858a6; color:#ffffff; border-top:0;" class="header">
 			<div class="center" data-role="none"><a href="#addCard" >카드 추가</a><a href="#select_card" class="on">잔액/기간 설정</a></div>
-			
+
 		</div>
-		
+
 		<div data-role="content" class="content">
 			<img src="images/learn_card.gif" alt="learn" class="add_card" />
 			<select name="weeks" id="weeks" data-role="none" >
@@ -88,11 +88,11 @@
 				<option value="DAYS">29</option>
 				<option value="DAYS">30</option>
 				<option value="DAYS">31</option>
-			</select>			
-			<input type="number" value="금액 입력" placeholder="금액 입력"  data-role="none" class="typeMoney"/>	
+			</select>
+			<input type="number" value="금액 입력" placeholder="금액 입력"  data-role="none" class="typeMoney"/>
 			<img src="images/nexus_typing.png" alt="" style="position:absolute; width:100%; margin-left:-4%; z-index:1002; bottom:-100%;"  class="typing"/>
 		</div>
-		
+
 		<div data-role="footer" data-position="fixed" style="background:#ffffff">
 			<div data-role="navbar" id="navbar">
 				<ul >
@@ -103,6 +103,6 @@
 				</ul>
 			</div>
 		</div>
-	</div>	
+	</div>
 </body>
 </html>
