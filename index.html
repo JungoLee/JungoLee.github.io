@@ -1,1 +1,648 @@
-Hello World
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="이시우, Leesiwoo 포트폴리오,이시우 포트폴리오, portfolio, jungo's portfolio, 웹디자인, web design, 퍼블리셔, publisher">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="3000">
+    <meta name="author" content="Lee Siwoo">
+    <meta name="description" content="Lee Siwoo Web project Portfolio">
+    <meta name="naver-site-verification" content="67f066eaf6dcbc2fd6760e4f8394a1496f687750">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/css/style.css?v=1624336969">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css?v=1624336969">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>Jungo's Portfolio</title>
+</head>
+
+
+
+<body>
+
+<div class="header">
+    <div class="header_center">
+        <a href="/view/gallery.php" class="our_secret">
+            <span class="for_transform">
+                secret
+            </span>
+        </a>
+        <h1>
+            <a href="/index.php">
+                <span>Lee</span>
+                <span>Jun</span>
+            </a>
+        </h1>
+
+        <span class="dis_none" onclick="toggle__class(this,'.mobile_btn')">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </span>
+
+        <ul class="mobile_btn">
+            <li><a href="/index.php" title="Main">Show all</a></li>
+            <li><a href="#" value="project" title="새창열기" )"="">project</a></li><li><a href="#" value="practice" title="새창열기" )"="">practice</a></li><li><a href="#" value="academy" title="새창열기" )"="">academy</a></li><li><a href="#" value="playing" title="새창열기" )"="">playing</a>            </li><li><a href="//open.kakao.com/o/se0CQXCb" title="kakao open" target="_blank">Kakao</a></li>
+            <li><a href="/include/google_replace.html" title="chrome_replace" target="_blank">google_re</a></li>
+
+        </ul>
+
+    </div>
+</div>
+
+
+    <div class="main_top ">
+        <div class="img_wrap">
+            <div class="img_box">
+                <img src="/src/images/space.jpg" alt="space">
+            </div>
+            <div class="text_area on">
+                <span class="horizontal top on"></span>
+                <span class="horizontal bottom on"></span>
+                <span class="vertical right on"></span>
+                <span class="vertical left on"></span>
+                <p>Always doing better.</p>
+                <ul>
+                    <li class="on">AN</li>
+                    <li class="on">IDEA</li>
+                    <li class="cf on">BECOMES</li>
+                    <li class="on">REAL</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="career_wrap">
+        <ul>
+            <li class="me"><p>ABOUT ME</p>
+                <ul>
+                    <li>Name : 이시우</li>
+                    <li>Birth : 1991.12.31</li>
+                    <li>Mobile : <a href="tel:01086525734">010-8652-5734</a></li>
+                    <li>Email : <a href="mailto:tough123181@gmail.com">tough123181@gmail.com</a></li>
+                    <!-- <li>Address : 서울특별시 마포구 연남동 </li> -->
+                    <li>Address : 서울특별시 광진구 군자동 </li>
+                    <!-- <li>Address : 경기도 안산시 단원구 선부 2동</li> -->
+                    <li>Education : 아세아 항공 전문 학교 졸업</li>
+                </ul>
+            </li>
+            <li class="career"><p>CAREER &amp; LICENSE</p>
+                <ul>
+                    <li>웹 전문교육기관 700시간 수료</li>
+                    <li>웹디자인기능사 (실기합격)</li>
+                    <li>Landing Entertainment Casino 2년 근무</li>
+                    <li>ONE Media 웹 에이전시 1년 근무</li>
+                    <li>etribe 웹 에이전시 7월 ~ 근무중  </li>
+                </ul>
+            </li>
+            <li class="advantage"><p>ADVANTAGE</p>
+                <ul>
+                    <li>주어진 기회에 최선을 다함</li>
+                    <li>원만한 인간관계</li>
+                    <li>논리적으로 사고하는 방식</li>
+                    <li>끝까지 마무리 하는 책임감</li>
+                    <li>긍정적인 마인드</li>
+                    <li>위기를 기회로 바꾸는 노련함</li>
+                </ul>
+            </li>
+            <li class="skills"><p>SKILLS</p>
+                <ul>
+                    <li>능숙한 SCSS사용</li>
+                    <li>영어 회화 소통 가능</li>
+                    <li>Git 버전 관리 가능</li>
+                    <li>능숙한 에디터 사용으로 작업 능률화 상승</li>
+                    <li>오픈소스 활용 상급</li>
+                    <li>접근성 마크업 / 스크립트 상급</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="remote">
+    <li></li>
+    <li><button onclick="bookmark()"><em>KEEP THIS PORTFOLIO</em><i class="fas fa-star"></i></button></li>
+    <li><a href="tel:01086525734" title="전화걸기">Tel : 010-8652-5734<i class="fas fa-phone-volume"></i></a></li>
+    <li><a href="mailto:tough123181@gmail.com" title="메일쓰기">E-Mail : tough123181@gmail.com<i class="fas fa-envelope"></i></a></li>
+    <li><a href="//open.kakao.com/o/se0CQXCb" title="메일쓰기">KAKAO TALK<i class="xi-kakaotalk"></i></a></li>
+</ul>
+    <div class="wrap">
+        <div class="contents_wrap" style="margin-top:0;">
+
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="http://drive.google.com/uc?export=view&amp;id=1N7wFJMlHRjYiARtrZ1X0lPaievpouvyW" alt="교원에듀 시연 A 타입">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -1914.3px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//uxdev.etribe.co.kr/kw/html/A_type/main/main.html#none" target="_blank">교원에듀 시연 A 타입</a></h3>
+        <a href="//uxdev.etribe.co.kr/kw/html/A_type/main/main.html#none" target="_blank">
+            <br>
+            교원에듀 시연 화면 A TYPE
+            <br>
+            HTML, CSS , SCRIPT
+            <br>
+            페럴럭스 화면을 강조한 화면
+            <br>
+            프로젝트 기간 : 2020.02.08 ~ 2020.02.26
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="http://drive.google.com/uc?export=view&amp;id=1dHlMG1_7flqftYxNxSNQdji5ibHdF_wh" alt="교원에듀 시연 B 타입">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -1914.3px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//uxdev.etribe.co.kr/kw/html/B_type/main/main.html#none" target="_blank">교원에듀 시연 B 타입</a></h3>
+        <a href="//uxdev.etribe.co.kr/kw/html/B_type/main/main.html#none" target="_blank">
+            <br>
+            교원에듀 시연 화면 B TYPE
+            <br>
+            HTML, CSS , SCRIPT
+            <br>
+            페럴럭스 화면을 강조한 화면
+            <br>
+            프로젝트 기간 : 2020.02.08 ~ 2020.02.26
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="http://drive.google.com/uc?export=view&amp;id=1kM8x4AWHn1eYiEspcWu-3TcIaGFd0qD5" alt="롯데호텔">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -1914.3px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//www.lottehotel.com/seoul-hotel/ko.html" target="_blank">롯데호텔</a></h3>
+        <a href="//www.lottehotel.com/seoul-hotel/ko.html" target="_blank">
+            <br>
+            PC / Mobile 반응형
+            <br>
+            스크립트 진행
+            <br>
+            프로젝트 기간 : 2020.11 ~ 2020.01
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="https://lh3.google.com/u/0/d/12IuHNN8bxLDPToknXEHiWSDn521A6rw4=w1275-h1057-iv1" alt="롯데채용">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -1914.3px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//recruit.lotte.co.kr/" target="_blank">롯데그룹채용</a></h3>
+        <a href="//recruit.lotte.co.kr/" target="_blank">
+            퍼블리싱 / 100%
+            <br>
+            SCSS (100%) / JS (100%) / HTML (100%)
+            <br>
+            PC / Mobile 적응형
+            <br>
+            퍼블리싱 PL로서 작업을 진행
+            <br>
+            프로젝트 기간 : 2020.05 ~ 2020.09
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="https://lh3.google.com/u/0/d/1pU_IFwt3ZqQU6vufX8OYW13kzrI8NBL0=w1275-h1008-iv1" alt="실패 박람회">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2390.55px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//failexpo.com/index.asp#funding" target="_blank">2020 실패박람회</a></h3>
+        <a href="//failexpo.com/index.asp#funding" target="_blank">
+            퍼블리싱 / 100%
+            <br>
+            SCSS (100%) / JS (100%) / HTML (100%)
+            <br>
+            PC / Mobile 반응형
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="https://lh3.google.com/u/0/d/1lDBwilwy6dXpIZ_R1fTO4tHDB5of6SsX=w1920-h1008-iv1" alt="대림 e편한세상">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2390.55px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//www.elife.co.kr/Mnmn_main.action" target="_blank">대한민국 No.1 아파트 e편한세상</a></h3>
+        <a href="//www.elife.co.kr/Mnmn_main.action" target="_blank">
+            퍼블리싱 / 95%
+            <br>
+            SCSS (100%) / JS (50%) / HTML (95%)
+            <br>
+            프로젝트 기간 : 2020.01 ~ 2020.05
+
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+        <img src="http://drive.google.com/uc?export=view&amp;id=1CkOGSVK1p6cOunxtyKoTQjfNP3iIpNEl" alt="Hanwha Aquaplanet">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2390.55px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="//www.aquaplanet.co.kr" title="Hanwha Aquaplanet" target="_blank">한화 아쿠아플라넷</a></h3>
+        <a href="//www.aquaplanet.co.kr" title="Hanwha Aquaplanet" target="_blank">
+            퍼블리싱 / 95%
+            <br>
+            SCSS (100%) / JS (75%) / HTML (95%)
+            <br>
+            PUG를 이용한 작업
+            <br>
+            프로젝트 기간 : 2019.11 ~ 2020.01
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/dosigas.jpg" alt="dosigas">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2390.55px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="https://www.seoulgas.co.kr/front/main.do" title="dosigas" target="_blank">서울도시가스</a></h3>
+        <a href="https://www.seoulgas.co.kr/front/main.do" title="dosigas" target="_blank">
+            퍼블리싱 / 80%
+            <br>
+            CSS (80%) / JS (50%) / HTML (80%)
+        </a>
+    </div>
+</div>
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project09.jpg" alt="Project09">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2866.8px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="https://www.ldcc.co.kr/" title="Project09" target="_blank">롯데정보통신</a></h3>
+        <a href="https://www.ldcc.co.kr/" title="Project09" target="_blank">
+            접근성 검수 작업 / 100%
+            <br>
+            스크립트 수정작업 / 25%
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/blogDdaji.png" alt="Blog Ddaji">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2866.8px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="https://blog.ddaji.com/blog" title="Blog Ddaji" target="_blank">Blog Ddaji</a></h3>
+        <a href="https://blog.ddaji.com/blog" title="Blog Ddaji" target="_blank">
+            블로그 형식으로 만든 페이지.
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/tvDdaji.png" alt="Tv Ddaji">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2866.8px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="https://tv.ddaji.com/" title="Tv Ddaji" target="_blank">Tv Ddaji</a></h3>
+        <a href="https://tv.ddaji.com/" title="Tv Ddaji" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/h1O.png" alt="Hospital Page">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -2866.8px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="http://h1.onemedia.kr/" title="Hospital Page" target="_blank">Hospital Page</a></h3>
+        <a href="http://h1.onemedia.kr/" title="Hospital Page" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/h2O.png" alt="Laywer Page">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3343.05px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="http://h2.onemedia.kr/" title="Laywer Page" target="_blank">Laywer Page</a></h3>
+        <a href="http://h2.onemedia.kr/" title="Laywer Page" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content project">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project08.png" alt="Project08">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3343.05px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="http://sample.onemedia.kr/cog/" title="Project08" target="_blank">Project08</a></h3>
+        <a href="http://sample.onemedia.kr/cog/" title="Project08" target="_blank">
+            요양원 디자인 제작
+        </a>
+    </div>
+</div>
+
+
+            <div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project01.png" alt="탐엔탐스 CSS 프로젝트 01">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3343.05px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project01/tom_and_toms/main/main.html" title="CSS_ Tom &amp; Toms" target="_blank">CSS_ Tom &amp; Toms</a></h3>
+        <a href="/view/Academy/project01/tom_and_toms/main/main.html" title="CSS_ Tom &amp; Toms" target="_blank">
+        탐엔탐스의 홈페이지를 재구성 해 보았습니다. 탐앤탐스는 메인 페이지와 서브페이지의 구성이 달라 저의 CSS 능력 표현하기 탁월하다 생각해 이 홈페이지를 선택했습니다. 그리고 홈페이지가 너무 어렵지 않게 구성하고자 집중하였고, 웹사이트의 레이아웃과 다양한 컨텐츠 디자인을 이해하고 적용하기 위해 사이트의 목적을 분명히 나타낼 수 있는 사이트를 찾아 정하였습니다.
+        </a>
+    </div>
+</div>
+
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project02.png" alt="탐엔탐스 제이쿼리 프로젝트 02">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3343.05px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project02/tom_and_toms/main/main.html" title="JQuery _ Tom &amp; Toms" target="_blank">JQuery _ Tom &amp; Toms</a></h3>
+        <a href="/view/Academy/project02/tom_and_toms/main/main.html" title="JQuery _ Tom &amp; Toms" target="_blank">
+        레이아웃 구성을 마친 CSS에 좀더 동적인 요소들과 날씨 확인 기능 등을 넣어 사용자가 홈페이지를 이용할 때 지루하지 않게 보이도록 구성하였습니다.
+        </a>
+    </div>
+</div>
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project03.png" alt="누리주택 제이쿼리 03">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3819.3px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project03/building.html" title="jQuery2_Nuri Housing" target="_blank">jQuery2_Nuri Housing</a></h3>
+        <a href="/view/Academy/project03/building.html" title="jQuery2_Nuri Housing" target="_blank">
+        jQuery 두번째 페이지는 지인이 밴치마킹겸 본인이 원하는 페이지를 제공해 주었습니다. 페이지의 구조나 디자인은 기존 페이지에서 부족한부분들을 밴치마킹을 통해 채워주었습니다.  컨셉은 분양관련 자료이다보니 사용자가 지루할 틈은 없게 jQuery 기능은 첨가하지만 또한 가독성이 떨어질수 있으니 너무 과하지 않게 만들도록 하였고, 또 부족하다고 느낀 컨테츠는 채워주어 하위 푸터 부분의 디자인은 정렬되도록 만들었습니다.
+        </a>
+    </div>
+</div>
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project04.png" alt="Adaptive1_SK_telecom">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3819.3px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project04/index.html" title="Adaptive1_SK_telecom" target="_blank">Adaptive1_SK_telecom</a></h3>
+        <a href="/view/Academy/project04/index.html" title="Adaptive1_SK_telecom" target="_blank">
+        SK 텔레콤의 5G 기술력과 365일 안정적인 네트워크, 오프라인의 일상이 모바일로 연결되는 통일된 편리한 IoT 세상을 만들어가는 SK텔레콤을 웹페이지 제작을 기획 하였다. 또 페이지의 해상도를 고려한 반응형웹으로 제작 하였다.
+        </a>
+    </div>
+</div>
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project05.png" alt="Adaptive2_Blizzard">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -3819.3px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project06/index.html" title="Adaptive2_Blizzard" target="_blank">Adaptive2_Blizzard</a></h3>
+        <a href="/view/Academy/project06/index.html" title="Adaptive2_Blizzard" target="_blank">
+        SK 텔레콤의 5G 기술력과 365일 안정적인 네트워크, 오프라인의 일상이 모바일로 연결되는 통일된 편리한 IoT 세상을 만들어가는 SK텔레콤을 웹페이지 제작을 기획 하였다. 또 페이지의 해상도를 고려한 반응형웹으로 제작 하였다.
+        </a>
+    </div>
+</div>
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project06.png" alt="Video_ Galaxy">
+        </div>
+
+    </div>
+
+    <div class="screen" style="top: -3819.3px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project05/index.html" title="Video_ Galaxy" target="_blank">Video_ Galaxy</a></h3>
+        <a href="/view/Academy/project05/index.html" title="Video_ Galaxy" target="_blank">
+        지난 S8 에 이어 삼성에서 Galaxy S9 이 새로 출고 되었는데, 저는 현재 광고영상을 토대로 광고의 효과를 더욱 빛나게 할 웹페이지를 제작하였습니다. 색상과 디자인은 이번 갤럭시의 컨셉 컬러인 보라색을 사용하였고, 상품의 이미지를 잘 보여줄수 있도록 레이아웃에 집중 하였습니다.
+        </a>
+    </div>
+</div>
+
+<div class="content academy">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/project07.png" alt="Event_ Jeju Island">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4295.55px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Academy/project07/index.html" title="Event_ Jeju Island" target="_blank">Event_ Jeju Island</a></h3>
+        <a href="/view/Academy/project07/index.html" title="Event_ Jeju Island" target="_blank">
+        이벤트 페이지로 제주 특별자치도를 선정 하였습니다. 제주도의 아름다운 사계절을 표현하면 좋겠다고 생각하여, 봄, 여름, 가을 ,겨울 을 잘 보여줄수 있는 이미지를 골라 웹페이지에 적용 하였습니다. 그리고 마우스를 움직일때는 이벤트가 발생하는 효과도 넣어 동적인 홈페이지를 보실수 있습니다.
+        </a>
+    </div>
+</div>
+
+            <div class="content practice">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/slideI.png" alt="Slide Animate">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4295.55px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Practice/04_build/index.html" title="Slide Animate" target="_blank">Slide Animate</a></h3>
+        <a href="/view/Practice/01_color_change/index.html" title="Slide Animate" target="_blank">
+            매인 배너 에니메이션 효과
+        </a>
+    </div>
+</div>
+
+<div class="content practice">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/template.png" alt="Sample 01">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4295.55px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Practice/02_bookstore/index.php" title="Sample 01" target="_blank">Sample 01</a></h3>
+        <a href="/view/Practice/02_bookstore/index.php" title="Sample 01" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content practice">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/carpage.png" alt="Sample 02">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4295.55px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Practice/05_carpage/index.php" title="Sample 02" target="_blank">Sample 02</a></h3>
+        <a href="/view/Practice/05_carpage/index.php" title="Sample 02" target="_blank">
+
+        </a>
+    </div>
+</div>
+            <div class="content playing">
+    <div class="img_box">
+        <div>
+        <img src="http://drive.google.com/uc?export=view&amp;id=1oAanHRaBf0oZknmShCh1X-Q8WkktYwhL">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4771.8px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/06_time_table/index2.html" title="새창열기" target="_blank">일정표, 시간표 UI</a></h3>
+        <a href="/view/Playing/06_time_table/index2.html" title="새창열기" target="_blank">
+            html : 100%
+            <br>
+            CSS : 100%
+            <br>
+            jQuery : 100%
+            <br>
+        </a>
+    </div>
+</div>
+
+<div class="content playing">
+    <div class="img_box">
+        <div>
+            <img src="//drive.google.com/uc?export=view&amp;id=14Tp__qBwjZVj7WRkgEscSIaoopluYCn1" alt="time_table">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4771.8px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/06_time_table/index.html" title="새창열기" target="_blank">Time Table</a></h3>
+        <a href="/view/Playing/06_time_table/index.html" title="새창열기" target="_blank">
+            html : 100%
+            <br>
+            CSS : 100%
+            <br>
+            jQuery : 100%
+            <br>
+            데이터값만 가지고 타임 테이블을 만들어주는 테이블.
+        </a>
+    </div>
+</div>
+
+<div class="content playing">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/colorC.png" alt="Color Change">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4771.8px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/01_color_change/index.html" title="Color Change" target="_blank">Color Change</a></h3>
+        <a href="/view/Playing/01_color_change/index.html" title="Color Change" target="_blank">
+            사용자가 게시판을 이용할때 원하는 색을 넣을수 있도록 하기 위하여 제작한 jQuery입니다.
+        </a>
+    </div>
+</div>
+
+<div class="content playing">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/hoverS.png" alt="Hover Special">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -4771.8px; left: -98.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/02_hovers/index.html" title="Hover Special" target="_blank">Mouse Move Hover</a></h3>
+        <a href="/view/Playing/02_hovers/index.html" title="Hover Special" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content playing">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/threeD.png" alt="Three Depth Menu Bar">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -5248.05px; left: 1330px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/03_three_depth/index.html" title="Three Depth Menu Bar" target="_blank">Three Depth Menu Bar</a></h3>
+        <a href="/view/Playing/03_three_depth/index.html" title="Three Depth Menu Bar" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+<div class="content playing">
+    <div class="img_box">
+        <div>
+            <img src="/src/images/aqua_planet.jpg" alt="aqua_planet">
+        </div>
+    </div>
+
+    <div class="screen" style="top: -5248.05px; left: 853.75px; background: rgba(0, 0, 0, 0);">
+        <h3><a href="/view/Playing/05_aqua_planet/index.html" title="Aqua planet concept" target="_blank">Aqua planet concept</a></h3>
+        <a href="/view/Playing/05_aqua_planet/index.html" title="Aqua planet concept" target="_blank">
+
+        </a>
+    </div>
+</div>
+
+            <div class="content ing">
+                <a href="#"></a>
+                <div class="screen" style="top: -5248.05px; left: 377.5px; background: rgba(0, 0, 0, 0);">
+                    <h3>Now Making <span class="dot1" style="opacity: 0.554867;">.</span><span class="dot2" style="opacity: 0;">.</span><span class="dot3" style="opacity: 0.445133;">.</span></h3>
+                    <a>현재 제작중입니다.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/src/js/script.js?v=1624336969"></script>
+
+</body></html>
