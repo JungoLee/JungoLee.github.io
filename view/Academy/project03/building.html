@@ -1,0 +1,613 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>누리 주택</title>
+	<link rel="stylesheet" href="css/building.css" />
+	<link rel="shortcut icon" href="http://villazik9.dothome.co.kr/wp-content/uploads/2017/11/nuri_logo_80.png" type="image/x-icon" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div id="wrap" class="cf">
+		<div id="screen_img">
+			<div class="time_line"></div>
+			<ul class="slide">				
+				<li class="on">
+					<div class="bg1"></div>
+					<div class="bg2 bg_op"><div class="black"></div></div>
+				</li>
+				<li>
+					<div class="bg2"></div>
+					<div class="bg3 bg_op"><div class="black"></div></div>				
+				</li>
+				<li>
+					<div class="bg3"></div>
+					<div class="bg1 bg_op"><div class="black"></div></div>			
+				</li>
+			</ul>
+			<ul class="button">
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="emtop"><a href="#" class="email"><img src="images/eMail_on.png" alt="" /></a><a href="#" class="top"><img src="images/top_on.png" alt="" /></a></div>
+		<div id="bg_grey1"></div>
+		
+		<div id="bg_image1"><div class="bg_image"></div></div>
+		<div id="bg_black1"></div>
+		
+		<div id="bg_image2"><div class="bg_image"></div></div>
+		<div id="bg_black2"></div>
+		
+		
+		<div id="header_box">
+			<div id="header" class="cf">	
+				<p><a href="#"><img src="images/nurilogo.png" width="290" height="60" alt="" /></a></p>
+				<ul class="cf">
+					<li><a href="building.html">홈</a>
+						<ul class="depth01 t2">
+							<li><a href="#">회사소개</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">투어일정</a></li>
+						</ul>
+					</li>
+					<li><a href="#">신축빌라</a>
+						<ul class="depth02 t2">
+							<li><a href="#">테라스가 있는 빌라</a></li>
+							<li><a href="#">복층구조의 빌라</a></li>
+							<li><a href="#">인테리어가 예쁜 빌라</a></li>
+							<li><a href="#">대중교통이 편한빌라</a></li>
+							<li><a href="#">지하철이용이 편한 빌라</a></li>
+							<li><a href="#">생활권이 편한 빌라</a></li>
+							<li><a href="#">햇볕이 잘드는 빌라</a></li>
+							<li><a href="#">조망이 좋은빌라</a></li>
+							<li><a href="#">향후가치 기대되는 빌라</a></li>
+							<li><a href="#">단지형 빌라</a></li>
+						</ul>					
+					</li>
+					<li><a href="#">타운하우스</a>
+						<ul class="depth03 t2">
+							<li><a href="#">넓은 복층이 있는 집</a></li>
+							<li><a href="#">마당or테라스가 있는 집</a></li>
+							<li><a href="#">인테리어가 돋보이는 집</a></li>
+							<li><a href="#">대중교통이 편한 집</a></li>
+							<li><a href="#">학교가 가까운 집</a></li>
+							<li><a href="#">채광이 좋은 집</a></li>
+							<li><a href="#">풍광이 예쁜 집</a></li>
+						</ul>					
+					</li>
+					<li><a href="#">지역별</a>
+						<ul class="depth04 t2">
+							<li><a href="#">수원</a></li>
+							<li><a href="#">용인</a></li>
+							<li><a href="#">안산</a></li>
+							<li><a href="#">화성</a></li>
+							<li><a href="#">오산</a></li>
+						</ul>					
+					</li>
+					<li><a href="#" title="문의전화"><img src="images/phone.png" alt="phone" width="13" height="13" />010-3333-3333</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div id="section1" class="cf">
+			<div id="search_box" class="cf">
+				<div id="box1" class="cf">
+					<p class="absol">내용검색</p>
+					<select name="city" id="city" class="hw pr">
+						<option value="">All cities</option>
+						<option value="">수원 (11)</option>
+						<option value="">안산 (4)</option>
+						<option value="">오산 (3)</option>
+						<option value="">용인 (7)</option>
+						<option value="">화성 (8)</option>
+					</select>
+					<select name="bed" id="bed" class="hw pr">
+						<option value="">침실수</option>
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+						<option value="">6</option>
+						<option value="">7</option>
+						<option value="">8</option>
+						<option value="">9</option>
+						<option value="">10</option>
+					</select>
+					<select name="bathroom" id="bathroom" class="hw pr">
+						<option value="">욕실수</option>
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+						<option value="">6</option>
+						<option value="">7</option>
+						<option value="">8</option>
+						<option value="">9</option>
+						<option value="">10</option>
+					</select>
+					<input type="text" value="실입주금.최소(만원)" onfocus="this.value=''" class="hw"/>
+					<input type="text" value="실입주금.최대(만원)" onfocus="this.value=''" class="hw"/>
+					<input type="text" value="키워드간편검색" onfocus="this.value=''" class="hw"/>
+					<p  class="hw p_option"><a href="#">More Search Option</a></p>
+				</div>
+				<div id="box2">
+					<a href="#">검색</a>
+				</div>
+			</div>
+			
+			
+			<div id="info_box">
+				<p class="title">HOUSING SALE</p>
+				<p class="bdt"></p>
+				<p>수원,용인,화성,안산 등 경기남부권역의 신축빌라, 신축아파트, 타운하우스 분양</p>
+				<p>Latest Properties Shortcode</p>
+				<div id="content_box">
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room01.jpg" width="253" height="157" alt="room" /></div>
+							<p>수지구신축빌라 전세,분양_용인 성복동신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>수지구신축빌라 전세,분양 용인 성복동신축빌라 . . 수지구 성복동에 위치한 용인신축빌라 물건으로 분양 뿐 아니라 전세로도 계약이 가능합니다. 주변의 신축빌라에 비해 가성비가 잘 나온 수지구신축빌라이며, 지하 <span> [more] </span> </p>
+							<p class="absol_top"><span class="text">수원</span><span class="num">12</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt=""/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room02.jpg" width="253" height="157" alt="room" /></div>
+							<p>수원신축빌라 분양-권선구 당수동빌라매매</p>
+							<p>실입주금 5,500만원</p>
+							<p>수원테라스빌라 분양,매매 영화동신축빌라 . 매력적인 광폭테라스가 있는 수원신축빌라 분양물건으로 생활권이 편리한 위치의 영화동신축빌라입니다.   5층건물 중 4층에 위치한 호실로 12세대 중 단 한세  <span>[more]</span></p>	
+							<p class="absol_top"><span class="text">오산,화성</span><span class="num">10</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt="" class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room03.jpg" width="253" height="157" alt="room" /></div>
+							<p>화성신축빌라 분양,매매_봉담읍 넓은쓰리룸 신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>화성신축빌라 분양,매매 남양읍신축빌라 . 화성 남양읍에 위치한 명품신축빌라 분양물건으로 구조가 좋을 뿐 아니라 주거여건이 좋고 주차까지 편리한 화성신축빌라 분양,매매 물건입니다.  <span>[more]</span></p>		
+							<p class="absol_top"><span class="text">용인</span><span class="num">10</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content cf">
+						<a href="#">
+							<div><img src="images/room04.jpg" width="253" height="157" alt="room" /></div>
+							<p>수원탑동신축빌라 분양,매매_공원조망의 남향집으로 채광좋은신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>안산신축빌라 분양,매매 상록구 본오동빌라 쓰리룸 . 상록구 본오동에 위치한 구조좋은 안산신축빌라 분양,매매 물건입니다. 내진설계와 층간차음재가 시공되어있어서 튼튼한 안산 상록구신축빌라이며, 무인택배함과 CC  <span >[more]</span></p>	
+							<p class="absol_top"><span class="text">수원</span><span class="num">10</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="load_more"><a href="#">LOAD MORE LISTINGS</a></div>
+			</div>
+		</div>
+		
+		
+		
+		<div id="section2" class="cf">
+			<div class="box1_1 img0"><a href="#"></a></div>
+			<div class="box2_1 img1"><a href="#"></a></div>
+			<div class="box1_1 img2 cf"><a href="#"></a></div>
+			<div class="box2_1 img3"><a href="#"></a></div>
+			<div class="box1_1 img4"><a href="#"></a></div>
+			<div class="box1_1 img5 cf"><a href="#"></a></div>
+			<div class="box1_1 img6"><a href="#"></a></div>
+			<div class="box1_1 img7"><a href="#"></a></div>
+			<div class="box2_1 img8"><a href="#"></a></div>
+		</div>
+		
+		
+		
+		<div id="section3">
+				<p class="title">CORE VALUES</p>
+				<p class="bdt"></p>
+				<p class="cf">믿음과 신뢰를 바탕으로 고객님과 함께 미래를 준비해 나가는 “누리하우징”이 되겠습니다.</p>
+					<div class="box1">
+						<img src="images/value_img1.jpg" alt="" />
+						<p class="title">VR_Tour</p>
+						<div class="subject">상-하, 좌-우 구분 없이 360˚X180˚모두 확인할 수 있는 VR파노라마를 도입하여 보다 현장감있게 실물을 확인하실 수 있도록 도와드리고 있습니다.</div>
+					</div>
+					<div class="box2">
+						<img src="images/value_img2.jpg" alt="" />
+						<p class="title">Real_Picture</p>
+						<div class="subject">100% 실매물과 실사진만 고집하다 보니 타사이트에 비해 물건들이 적어보일 수도 있지만 허위매물이 없어서 오셔서 실망하실 일 없습니다.</div>
+					</div>
+					<div class="box3">
+						<img src="images/value_img3.jpg" alt="" />
+						<p class="title">Best_House</p>
+						<div class="subject">현장답사와 권리분석을 마친 다양한 구조와 가격대의 물건들이 준비되어있습니다. 연락주시면 고객님에게 맞는 최상의 물건들만 추려서 다양하게 보여드리겠습니다.</div>
+					</div>
+		</div>
+		
+		
+		
+		<div id="section4">
+				<p class="title">OUR SUPER AGENTS</p>
+				<p class="bdt"></p>
+				<p class="cf">누리하우징은 각 지역의 물건들을 취합하여 최상의 물건들만을 추려드리고 있습니다. <br /> 주중 및 주말에도 답사가능하니 연락주세요</p>		
+				<div class="introduce">
+					<img src="images/my-pic.jpg" alt="" />
+					<p class="name">류지훈팀장</p>
+					<p class="team">분양사업부</p>
+					<p class="info"><img src="images/phone2.png" alt="" />010-0000-2222</p>
+					<p class="info m12"><img src="images/cellphone.png" alt="" />010-4444-6666</p>
+					<p class="info"><img src="images/eMail.png" alt="" />abcde@naver.com</p>
+					<p class="footer_bg">
+						<a href="#" class="facebook"></a><a href="#" class="twitter"></a><a href="#"class="insta"></a><a href="#" class="pin_t"></a>
+					</p>
+				</div>
+		</div>
+		
+		
+		
+		<div id="section5" class="cf">
+			<div class="img_area1"><div class="image"></div></div>
+			<div class="text area1">
+				<div class="text_box">
+					<p class="title">아파트와 단독주택의 장점이 합쳐진</p>
+					<h2 class="sub_title">타운하우스</h2>
+					<p class="subject">타운하우스는 아파트의 편의성과 단독주택의 여유로움을 두루 갖춘 주택으로 신도시와 가까운 위치에 있어 생활편의성은 높으면서도 복잡한 도시생활을 살짝 벗어나는 것만으로도 여유로움까지 느낄 수 있는 공간입니다.</p>
+					<a href="#" class="link">See the Townhouse >></a>
+				</div>	
+			</div>
+			<div class="text area2">
+				<div class="text_box">
+					<p class="title">가성비와 편의성이 좋은</p>
+					<h2 class="sub_title">신축빌라</h2>
+					<p class="subject">최근 지어진 신축빌라들은 기존 빌라들의 단점으로 지적됐던 부실한 단열, 마감 등을 개선해 아파트보다 더욱 좋아졌다는 평이 많아졌습니다. 또한 가성비가 좋다보니 아파트의 대안으로 자리잡고 있습니다.</p>
+					<a href="#" class="link1"><< See the Newly built villa</a>			
+				</div>				
+			</div>
+			<div class="img_area2"><div class="image"></div></div>			
+		</div>
+		
+		
+		
+		<div id="section6">
+			<div class="info_box">
+				<p class="title">NEWLY CONSTRUCTED HOUSE</p>
+				<p class="bdt"></p>
+				<p>전문적인 지식이 없는 사람이 정확하고 자세한 부동산 관련정보를 얻기란 쉽지 않지요.
+특히 신축빌라매매·분양에는 단열, 층간소음재, 방음, 세대간소음, 불법확장여부 등 부실시공을 하지는 않았는지 체크해야 할것들이 한두가지가 아닙니다.
+저희 ‘누리하우징’은 임장활동과 권리분석을 통해 이상없는 물건들만을 추천해드리고 있으며, 100% 실사진&실매물만 제공하고 있습니다.</p>
+				<p>Properties Slider</p>
+				<a href="#" class="next"></a><a href="#" class="prev"></a>
+				<div class="content_box on">
+					<div class="content">
+						<a href="#">
+							<div ><img src="images/room01.jpg" alt="room" /></div>
+							<p>수지구신축빌라 전세,분양_용인 성복동신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>수지구신축빌라 전세,분양 용인 성복동신축빌라 . . 수지구 성복동에 위치한 용인신축빌라 물건으로 분양 뿐 아니라 전세로도 계약이 가능합니다. 주변의 신축빌라에 비해 가성비가 잘 나온 수지구신축빌라이며, 지하 <span> [more] </span> </p>
+							<p class="absol_top"><span class="text">수원</span><span class="num">1</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt=""/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room02.jpg" alt="room" /></div>
+							<p>수원신축빌라 분양-권선구 당수동빌라매매</p>
+							<p>실입주금 5,500만원</p>
+							<p>수원테라스빌라 분양,매매 영화동신축빌라 . 매력적인 광폭테라스가 있는 수원신축빌라 분양물건으로 생활권이 편리한 위치의 영화동신축빌라입니다.   5층건물 중 4층에 위치한 호실로 12세대 중 단 한세  <span>[more]</span></p>	
+							<p class="absol_top"><span class="text">오산,화성</span><span class="num">2</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt="" class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content cf">
+						<a href="#">
+							<div><img src="images/room04.jpg" alt="room" /></div>
+							<p>수원탑동신축빌라 분양,매매_공원조망의 남향집으로 채광좋은신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>안산신축빌라 분양,매매 상록구 본오동빌라 쓰리룸 . 상록구 본오동에 위치한 구조좋은 안산신축빌라 분양,매매 물건입니다. 내진설계와 층간차음재가 시공되어있어서 튼튼한 안산 상록구신축빌라이며, 무인택배함과 CC  <span >[more]</span></p>	
+							<p class="absol_top"><span class="text">수원</span><span class="num">3</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+				</div>
+
+
+				<div class="content_box">
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room03.jpg" alt="room" /></div>
+							<p>수지구신축빌라 전세,분양_용인 성복동신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>수지구신축빌라 전세,분양 용인 성복동신축빌라 . . 수지구 성복동에 위치한 용인신축빌라 물건으로 분양 뿐 아니라 전세로도 계약이 가능합니다. 주변의 신축빌라에 비해 가성비가 잘 나온 수지구신축빌라이며, 지하 <span> [more] </span> </p>
+							<p class="absol_top"><span class="text">수원</span><span class="num">4</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt=""/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room05.jpg" alt="room" /></div>
+							<p>수원신축빌라 분양-권선구 당수동빌라매매</p>
+							<p>실입주금 5,500만원</p>
+							<p>수원테라스빌라 분양,매매 영화동신축빌라 . 매력적인 광폭테라스가 있는 수원신축빌라 분양물건으로 생활권이 편리한 위치의 영화동신축빌라입니다.   5층건물 중 4층에 위치한 호실로 12세대 중 단 한세  <span>[more]</span></p>	
+							<p class="absol_top"><span class="text">오산,화성</span><span class="num">5</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt="" class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content cf">
+						<a href="#">
+							<div><img src="images/room06.jpg" alt="room" /></div>
+							<p>수원탑동신축빌라 분양,매매_공원조망의 남향집으로 채광좋은신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>안산신축빌라 분양,매매 상록구 본오동빌라 쓰리룸 . 상록구 본오동에 위치한 구조좋은 안산신축빌라 분양,매매 물건입니다. 내진설계와 층간차음재가 시공되어있어서 튼튼한 안산 상록구신축빌라이며, 무인택배함과 CC  <span >[more]</span></p>	
+							<p class="absol_top"><span class="text">수원</span><span class="num">6</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="content_box">
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room07.jpg" alt="room" /></div>
+							<p>수지구신축빌라 전세,분양_용인 성복동신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>수지구신축빌라 전세,분양 용인 성복동신축빌라 . . 수지구 성복동에 위치한 용인신축빌라 물건으로 분양 뿐 아니라 전세로도 계약이 가능합니다. 주변의 신축빌라에 비해 가성비가 잘 나온 수지구신축빌라이며, 지하 <span> [more] </span> </p>
+							<p class="absol_top"><span class="text">수원</span><span class="num">7</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt=""/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room08.jpg" alt="room" /></div>
+							<p>수원신축빌라 분양-권선구 당수동빌라매매</p>
+							<p>실입주금 5,500만원</p>
+							<p>수원테라스빌라 분양,매매 영화동신축빌라 . 매력적인 광폭테라스가 있는 수원신축빌라 분양물건으로 생활권이 편리한 위치의 영화동신축빌라입니다.   5층건물 중 4층에 위치한 호실로 12세대 중 단 한세  <span>[more]</span></p>	
+							<p class="absol_top"><span class="text">오산,화성</span><span class="num">8</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt="" class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content cf">
+						<a href="#">
+							<div><img src="images/room09.jpg" alt="room" /></div>
+							<p>수원탑동신축빌라 분양,매매_공원조망의 남향집으로 채광좋은신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>안산신축빌라 분양,매매 상록구 본오동빌라 쓰리룸 . 상록구 본오동에 위치한 구조좋은 안산신축빌라 분양,매매 물건입니다. 내진설계와 층간차음재가 시공되어있어서 튼튼한 안산 상록구신축빌라이며, 무인택배함과 CC  <span >[more]</span></p>	
+							<p class="absol_top"><span class="text">수원</span><span class="num">9</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="content_box">
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room10.jpg" alt="room" /></div>
+							<p>수지구신축빌라 전세,분양_용인 성복동신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>수지구신축빌라 전세,분양 용인 성복동신축빌라 . . 수지구 성복동에 위치한 용인신축빌라 물건으로 분양 뿐 아니라 전세로도 계약이 가능합니다. 주변의 신축빌라에 비해 가성비가 잘 나온 수지구신축빌라이며, 지하 <span> [more] </span> </p>
+							<p class="absol_top"><span class="text">수원</span><span class="num">10</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt=""/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<a href="#">
+							<div><img src="images/room11.jpg" alt="room" /></div>
+							<p>수원신축빌라 분양-권선구 당수동빌라매매</p>
+							<p>실입주금 5,500만원</p>
+							<p>수원테라스빌라 분양,매매 영화동신축빌라 . 매력적인 광폭테라스가 있는 수원신축빌라 분양물건으로 생활권이 편리한 위치의 영화동신축빌라입니다.   5층건물 중 4층에 위치한 호실로 12세대 중 단 한세  <span>[more]</span></p>	
+							<p class="absol_top"><span class="text">오산,화성</span><span class="num">11</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>
+							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt="" class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+					<div class="content cf">
+						<a href="#">
+							<div><img src="images/room12.jpg" alt="room" /></div>
+							<p>수원탑동신축빌라 분양,매매_공원조망의 남향집으로 채광좋은신축빌라</p>
+							<p>실입주금 5,500만원</p>
+							<p>안산신축빌라 분양,매매 상록구 본오동빌라 쓰리룸 . 상록구 본오동에 위치한 구조좋은 안산신축빌라 분양,매매 물건입니다. 내진설계와 층간차음재가 시공되어있어서 튼튼한 안산 상록구신축빌라이며, 무인택배함과 CC  <span >[more]</span></p>	
+							<p class="absol_top"><span class="text">수원</span><span class="num">12</span></p>
+							<p><img src="images/bed_bath.jpg" alt="" /><span>full info</span></p>							<div class="icon_box">
+								<img src="images/admin.png" alt=""  class="admin"/>
+								<img src="images/add_icon_off.png" alt=""  class="mt"/>					
+								<img src="images/favorite_icon_off.png" alt="" />
+								<img src="images/link_icon_off.png" alt="" />
+							</div>
+						</a>
+					</div>
+				</div>				
+			</div>		
+		</div>
+		<div id="footer">
+			<div class="content_box">
+				<div class="calendar">
+					<table>	
+						<tr>
+							<td colspan="7" class="title" >Calendar</td>
+						</tr>
+						<tr >
+							<td colspan="7" class="date">3월 2018</td>
+						</tr>
+						<tr >
+							<th >월</th>
+							<th>화</th>
+							<th>수</th>
+							<th>목</th>
+							<th>금</th>
+							<th class="blue">토</th>
+							<th class="red">일</th>
+						</tr>
+						<tr >
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>1</td>
+							<td class="blue">2</td>
+							<td class="red">3</td>
+						</tr>
+						<tr >
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td class="blue">9</td>
+							<td class="red">10</td>						
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+							<td class="blue">16</td>
+							<td class="red">17</td>								
+						</tr>
+						<tr>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+							<td>22</td>
+							<td class="blue">23</td>
+							<td class="red">24</td>														
+						</tr>
+						<tr >
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+							<td>29</td>
+							<td class="blue">30</td>
+							<td class="red">31</td>								
+						</tr>
+						<tr >
+							<td colspan="3" class="mgt"><< 2월</td>
+						</tr>
+					</table>
+				</div>
+				<div class="tag">
+					<p>Favorite Search Word</p>
+					<ul>
+						<ol>1. 단지형 빌라</ol>
+						<ol>2. 대중교통이 편한빌라</ol>
+						<ol>3. 복층구조의 빌라</ol>
+						<ol>4. 생활권이 편한 빌라</ol>
+						<ol>5. 인테리어가 예쁜 빌라</ol>
+						<ol>6. 조망이 좋은 빌라</ol>
+						<ol>7. 지하철 이용이 편한 빌라</ol>
+						<ol>8. 테라스가 있는 빌라</ol>
+						<ol>9. 학교가 가까운 빌라</ol>
+						<ol>10. 햇볕이 잘드는 빌라</ol>
+					</ul>
+				</div>
+				<div class="contact">
+					<p class="title">Contact</p>
+					<img src="images/footer_img.png" alt="footer" />
+					<p>용인,수원,화성,안산 전지역</p>
+					<p class="hover">010-4168-2105</p>
+					<p>050-4020-2105</p>
+					<p class="hover">villazik9@gmail.com</p>
+					<p class="hover">http://nurihousing.com</p>
+				</div>
+			</div>
+			<div class="footer_info">
+					<p>경기남부권 신축빌라분양 Nurihousing.com ｜ Tel. 010-4168-2105 ｜ Modify design by 빌라직구센터 with 누리하우징</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

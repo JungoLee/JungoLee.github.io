@@ -1,0 +1,90 @@
+@mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    -ms-box-shadow: $shadows;
+    -o-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transformw: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+
+}
+
+@mixin border-radius($border...) {
+    -webkit-border-radius: $border;
+    -moz-border-radius: $border;
+    -ms-border-radius: $border;
+    -o-border-radius: $border;
+    border-radius: $border;
+}
+
+@mixin word-break($break...) {
+    -webkit-word-break: $break;
+    -moz-word-break: $break;
+    -ms-word-break: $break;
+    -o-word-break: $break;
+    word-break: $break;
+}
+
+// fadeOut 4s 1s infinite linear alternate
+// 이름 시간 딜레이 반복횟수 에니메이션모양 방향
+@mixin animation($animation...) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+@mixin flexGrid($display...) {
+    display: -webkit-$display;
+    display: -moz-$display;
+    display: -ms-$display;
+    display: -o-$display;
+    display: $display;
+}
+
+@mixin flex($num...) {
+    -webkit-flex: $num;
+    -moz-flex: $num;
+    -ms-flex: $num;
+    -o-flex: $num;
+    flex: $num;
+}
+
+@mixin grid-template-columns($data...) {
+    -webkit-grid-template-columns: $data;
+    -moz-grid-template-columns: $data;
+    -ms-grid-template-columns: $data;
+    -o-grid-template-columns: $data;
+    grid-template-columns: $data;
+}
+
+@mixin textShadow($shadow...){
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    -ms-text-shadow: $shadow;
+    -o-text-shadow: $shadow;
+    text-shadow: $shadow;
+}
+
+@mixin box-sizing($sizing...){
+    -webkit-box-sizing:$sizing;
+    -moz-box-sizing:$sizing;
+    -ms-box-sizing:$sizing;
+    -o-box-sizing:$sizing;
+    box-sizing:$sizing;
+}

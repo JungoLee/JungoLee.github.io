@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://www.sktelecom.co.kr/ -->
+<html lang="ko" class="browser-name-chrome browser-version-65 device-model-unknown device-type-desktop os-name-windows os-version-7 screen-large view-landscape"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SK telecom</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="http://www.sktelecom.co.kr/favicon.ico">
+    <link rel="stylesheet" href="./SK telecom_files/reset.css">
+    <link rel="stylesheet" href="./SK telecom_files/common.css">
+    <link rel="stylesheet" href="./SK telecom_files/layout.css">    
+    <link rel="stylesheet" href="./SK telecom_files/main-new.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/ie8.css">
+    <![endif]-->
+    <script async="" src="./SK telecom_files/analytics.js.다운로드"></script><script type="text/javascript" src="./SK telecom_files/jquery-1.12.2.min.js.다운로드"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="/js/nwmatcher.min.js"></script>
+    <script type="text/javascript" src="/js/selectivizr-min.js"></script>
+    <script type="text/javascript" src="/js/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./SK telecom_files/ua-parser.min.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/jquery.base.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/carousel.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/jquery.easing.1.3.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/jquery.parallax-scroll.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/noframework.waypoints.min.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/layout.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/sktelecom.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/main.js.다운로드"></script>
+    
+    <script type="text/javascript" src="./SK telecom_files/app_common.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/gnb.js.다운로드"></script>    
+    
+    <script type="text/javascript" src="./SK telecom_files/popup.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/ga.js.다운로드"></script>
+    <script type="text/javascript" src="./SK telecom_files/netfunnel.js.다운로드" charset="utf-8"></script>
+    
+    
+    <script type="text/javascript">
+    
+    
+    	$(function(){
+    		NetFunnel_Complete({},function(ev, ret){    			
+    		});
+    		
+    		gnbInit();    		    		      	
+    		netfunnelSetting();
+    		
+    		$.ajaxSetup({    		
+    			cache : false
+    		});
+    		
+    		
+    		$("#popupContents").load("/html/index/popup.html", function(){
+    			
+    			 $(".popup input.cbox").change(function(){     				     				 
+    				 if($(this).filter(":checked").size() > 0){       					 
+	    				 if($(this).closest(".popup").attr("id") != undefined){
+	    					 setCookie($(this).closest(".popup").attr("id") , "done" , 1);    					 			        
+	    				 }	    				 
+	    				 $(this).parent().siblings().click();
+    				 }
+    			 });
+    			 $('.popup .btn-popup-close').on('click', function() {
+                     $(this).closest('.popup').removeClass('show');
+                     $(this).closest('.popup').addClass('hide');
+                 });
+    		});
+    		
+    		$("#pressContents").load("/html/index/press.html", function(){
+    			netfunnelSetting();
+    			$("#pressContents").find("p[id^=press]").each(function(){
+					var _obj = $(this); 
+					var key = _obj.attr("id").replace("press_", ""); 
+					_obj.text(pressObj[key]);
+				});
+                var waypoint01 = new Waypoint({
+                    element: document.getElementById('sectionNews'),
+                    handler: function (direction) {
+                        if (direction == 'down') {
+                            $('.section.news').addClass('animate');
+                        } else {
+                            $('.section.news').removeClass('animate');
+                        }
+                    },
+                    offset: '45%'
+                });
+    		});    		
+    		
+    		$("#socialContents").load("/html/index/social.html", function(){
+    			$("#socialContents li").each(function(idx){
+    				var num=idx+1;
+    				$(this).attr("id", "wpInsight0"+num );
+    				$(this).attr("class", "item-0"+num );
+    				$(this).find("p[id^=social]").each(function(){
+    					var _obj = $(this); 
+    					var key = _obj.attr("id").replace("social_", ""); 
+    					_obj.text(socialObj[key]);
+    				});
+    			});
+                var waypoint05 = new Waypoint({
+                    element: document.getElementById('wpInsight01'),
+                    handler: function (direction) {
+                        if (direction == 'down') {
+                            $('.section.insight li.item-01').addClass('animate');
+                        } else {
+                            $('.section.insight li.item-01').removeClass('animate');
+                        }
+                    },
+                    offset: '45%'
+                });
+                var waypoint06 = new Waypoint({
+                    element: document.getElementById('wpInsight02'),
+                    handler: function (direction) {
+                        if (direction == 'down') {
+                            $('.section.insight li.item-02').addClass('animate');
+                        } else {
+                            $('.section.insight li.item-02').removeClass('animate');
+                        }
+                    },
+                    offset: '45%'
+                });
+                var waypoint07 = new Waypoint({
+                    element: document.getElementById('wpInsight03'),
+                    handler: function (direction) {
+                        if (direction == 'down') {
+                            $('.section.insight li.item-03').addClass('animate');
+                        } else {
+                            $('.section.insight li.item-03').removeClass('animate');
+                        }
+                    },
+                    offset: '45%'
+                });
+    		});
+    		
+    		$("#bannerContents").load("/html/index/banner.html", function(){
+    			mainJSInit(jQuery, window, document);
+    		});
+
+    	});
+    
+    </script>
+</head>
+<body>
+<!-- shortcut start -->
+<div id="skip_navi">
+    <a href="http://www.sktelecom.co.kr/#content">본문 바로가기</a>
+    <a href="http://www.sktelecom.co.kr/#navi_title">주 메뉴 바로가기</a>
+</div>
+<!-- shortcut end -->
+<div class="container main-page" style="padding-bottom: 245px;">
+    <!-- gnb start -->
+    <div class="gnb" id="gnbCommon" tabindex="-1">
+
+
+	
+        <div class="gnb-wrap wrap-top">
+            <div class="gnb-inner">
+                <h1>
+                    <a href="http://www.sktelecom.co.kr/index.html" class="link-home" data-netfunnel="act_Main" title="SK telecom(Home)">
+                        <img class="img-small" src="./SK telecom_files/skt.png" alt="SK telecom" draggable="false">
+                        <img class="img-large" src="./SK telecom_files/skt(1).png" alt="SK telecom" draggable="false">
+                    </a>
+                </h1>
+                <ul class="gnb-link">
+                    <li class="divider">
+                        <a href="https://www.sktinsight.com/category/tomorrow/5g-all" title="새창열림" target="_blank" class="link-5g">
+                            <img class="img-small" src="./SK telecom_files/5g.png" alt="Welcome to 5G Korea" draggable="false">
+                            <img class="img-large" src="./SK telecom_files/5g(1).png" alt="Welcome to 5G Korea" draggable="false">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.sktelecom.co.kr/index_en.html" data-netfunnel="act_Main_EN" title="English">
+                             <img class="img-small" src="./SK telecom_files/lang_eng.png" alt="English" draggable="false">
+                            <img class="img-large" src="./SK telecom_files/lang_eng(1).png" alt="English" draggable="false">
+                        </a>
+                    </li>
+                   	<li class="is-mobile">
+                        <a href="http://www.sktelecom.co.kr/" title="메뉴" class="btn-hamburger-menu">
+                            <div>
+                                <span class="ham-top"></span>
+                                <span class="ham-middle"></span>
+                                <span class="ham-hidden"></span>
+                                <span class="ham-bottom"></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="gnb-menu-wrap">
+            <div class="gnb-wrap wrap-bottom is-pc" style="background-color: transparent; border-color: transparent;">
+                <div class="gnb-inner">
+                    <h2 id="navi_title" class="txt-hide layout-area-title">주 메뉴 영역</h2>
+                    <ul class="menu">
+                        <li class="menu-item-01" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/view/introduce/intro.do" title="SK텔레콤 소개" class="">
+                                <img src="./SK telecom_files/gnb_text_01.png" alt="SK텔레콤 소개" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                        <li class="menu-item-02" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/view/investor/structure.do" title="투자정보" class="">
+                                <img src="./SK telecom_files/gnb_text_02.png" alt="투자정보" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                        <li class="menu-item-03" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/view/manage/csr.do" title="지속가능경영">
+                                <img src="./SK telecom_files/gnb_text_03.png" alt="지속가능경영" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                        <li class="menu-item-04" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/advertise/main.do" title="홍보센터">
+                                <img src="./SK telecom_files/gnb_text_04.png" alt="홍보센터" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                        <li class="menu-item-05" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/view/careers/hr.do" title="인재채용">
+                                <img src="./SK telecom_files/gnb_text_05.png" alt="인재채용" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                        <li class="menu-item-06" tabindex="-1">
+                            <a href="http://www.sktelecom.co.kr/customer/notice.do" title="고객지원">
+                                <img src="./SK telecom_files/gnb_text_06.png" alt="고객지원" draggable="false" tabindex="-1" style="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        	<div class="sub-menu" style="height: 0px;">
+                <h2 class="txt-hide layout-area-title">서브 메뉴 영역</h2>
+                <div class="sub-menu-inner">
+                    <ul>
+                        <li class="sub-menu-item item-01" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>SK텔레콤 소개</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/introduce/intro.do">SK텔레콤</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/introduce/business.do">사업소개</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sub-menu-item item-02" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>투자정보</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap menu-tree">
+                                        <a href="http://www.sktelecom.co.kr/view/investor/structure.do" class="menu-tree-title">경영정보</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/structure.do">지배구조</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/meeting.do">주주총회</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/incorporation.do">정관</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-link-wrap menu-tree">
+                                        <a href="http://www.sktelecom.co.kr/view/investor/highlight.do" class="menu-tree-title">재무정보</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/highlight.do">재무 하이라이트</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/creditgrade.do">신용등급</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-link-wrap menu-tree">
+                                        <a href="http://www.sktelecom.co.kr/view/investor/state.do" class="menu-tree-title">주식정보</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/state.do">주주현황</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/return.do">주주환원</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/information.do">주가정보</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="menu-link-wrap menu-tree">
+                                        <a href="http://www.sktelecom.co.kr/investor/lib/announce.do" class="menu-tree-title">IR자료실</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/investor/lib/announce.do">실적발표</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/investor/lib/presentation.do">Presentation</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/investor/lib/breport.do">사업 보고서</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/investor/lib/creport.do">통합 보고서</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/investor/lib/disclosure.do">분쟁광물</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/disclosure.do">공시정보</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/investor/lib/faq.do">FAQ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-link-wrap sub-link">
+                                           <a href="http://www.sktelecom.co.kr/investor/lib/elec_notice.do">전자공고</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sub-menu-item item-03" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>지속가능경영</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/manage/csr.do">책임경영</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/manage/contribute.do">사회기여활동</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/manage/lib/persist.do">지속경영 자료실</a></li>
+                                    <li class="menu-link-wrap">
+                                        <a href="http://www.sktelecom.co.kr/view/manage/policy.do" class="menu-tree-title">이해관계자 참여</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/manage/policy.do">정책</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/view/manage/framework.do">참여 Framework</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sub-menu-item item-04" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>홍보센터</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap menu-tree">
+                                        <a href="http://www.sktelecom.co.kr/advertise/main.do" class="menu-tree-title">미디어</a>
+                                        <ul>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/advertise/main.do">광고</a></li>
+                                            <li class="sub-link"><a href="http://www.sktelecom.co.kr/advertise/press.do" data-netfunnel="act_Press">보도자료</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/advertise/brand.do">브랜드</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/advertise/tum.do">T.um</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/advertise/sports.do">스포츠</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sub-menu-item item-05" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>인재채용</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/view/careers/hr.do">HR 제도</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://sktrecruit.sktelecom.com/recruit_user/empNotice/empNoticeInfo" target="_blank" title="새창열림" onclick="$.openPopup(event, this)">채용정보</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sub-menu-item item-06" tabindex="-1">
+                            <span class="sub-menu-title is-mobile">
+                            <span>고객지원</span>
+                            </span>
+                            <div class="sub-menu-contents">
+                                <ul>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/customer/notice.do">공지사항</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/customer/faq.do">FAQ</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/customer/privacy.do">상호접속협정서</a></li>
+                                    <li class="menu-link-wrap sub-link"><a href="http://www.sktelecom.co.kr/customer/calendar.do">통화량 캘린더</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	</div>
+    <!-- gnb end -->
+    <!-- content start -->
+    <div id="content" class="content">
+        <h2 class="txt-hide layout-area-title">본문 영역</h2>
+        <!-- popup start -->
+        <div class="popup-wrap">
+            <div class="popups" id="popupContents"> 				<div class="popup main-popup-1 hide show" id="popup_29">
+                    <div class="popup-inner">
+                        <div class="popup-content">
+                            <a href="http://www.sktelecom.com/investor/lib/announce.do" target="_blank"><img src="./SK telecom_files/EarningsReleasekrpopup2.jpg" alt="2017년 4분기 실적발표 Conference Call"></a>
+                        </div>
+                        <div class="popup-utils cell-wrap">
+                            <div class="cell">
+                                <span class="component-group f-left">
+                                    <input type="checkbox" class="cbox" id="cbox-popup-1">
+                                    <label for="cbox-popup-1">오늘 다시 보지 않기</label>
+                                </span>
+                                <button type="button" class="btn-popup-close f-right">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <script type="text/javascript">
+                openNotiPopup('popup_29', 'DATE', '2018012914', '2018020600');
+                </script>
+</div>
+        </div>
+        <!-- popup end -->
+        <!-- *********************** -->    
+         <div id="sectionBanner" class="section banner play" data-frozen="false" style="height: 925px;">
+            <ul id="bannerContents">  <li class="item-01" data-index="1">
+                    <div class="img-wrap"><div class="dim"></div></div>
+                    <div class="txt-wrap">
+                        <p>
+                            <img src="./SK telecom_files/banner_txt_1.png" alt="365일 안정적인 네트워크를 만들기 위해 보이지 않는 곳에서 부터 SK텔레콤의 노력은 시작됩니다." class="is-mobile">
+                            <img src="./SK telecom_files/banner_txt_1(1).png" alt="365일 안정적인 네트워크를 만들기 위해 보이지 않는 곳에서 부터 SK텔레콤의 노력은 시작됩니다." class="is-pc">
+                        </p>
+                    </div>
+                </li>
+                <li class="item-02" data-index="2">
+                    <div class="img-wrap"><div class="dim"></div></div>
+                    <div class="txt-wrap">
+                        <p>
+                            <img src="./SK telecom_files/banner_txt_2.png" alt="SK텔레콤의 앞선 5G 기술력을 바탕으로 안전한 자율주행의 미래를 열어갑니다." class="is-mobile">
+                            <img src="./SK telecom_files/banner_txt_2(1).png" alt="SK텔레콤의 앞선 5G 기술력을 바탕으로 안전한 자율주행의 미래를 열어갑니다." class="is-pc">
+                        </p>
+                    </div>
+                </li>
+                <li class="item-03 view on" data-index="3">
+                    <div class="img-wrap"><div class="dim"></div></div>
+                    <div class="txt-wrap">
+                        <p>
+                            <img src="./SK telecom_files/banner_txt_3.png" alt="사물인터넷(IoT)을 통한 일산의 행복한 변화, SK텔레콤이 도와드립니다." class="is-mobile">
+                            <img src="./SK telecom_files/banner_txt_3(1).png" alt="사물인터넷(IoT)을 통한 일산의 행복한 변화, SK텔레콤이 도와드립니다." class="is-pc">
+                        </p>
+                    </div>
+                </li></ul>
+            <div class="controller">
+                <button class="btn-dot" title="1"><span></span></button>
+                <button class="btn-dot" title="2"><span></span></button>
+                <button class="btn-dot on" title="3"><span></span></button>
+                <button class="btn-control" title="STOP"><span class="txt-hide main-sprite">PLAY/STOP</span></button>
+            </div>
+        </div>
+        <div id="sectionInsight" class="section insight">
+            <div class="section-inner">
+                <div class="sec-head">
+                    <h3>
+                        <img src="./SK telecom_files/main_title_1.png" alt="SKT Insight" class="is-mobile">
+                        <img src="./SK telecom_files/main_title_1(1).png" alt="SKT Insight" class="is-pc">
+                    </h3>
+                    <a href="http://www.sktinsight.com/" target="_blank" title="새창열림" class="main-sprite-after">더 많은 Insight를 확인하세요</a>
+                </div>
+                <div class="sec-body">
+                    <ul id="socialContents">                                      <li id="wpInsight01" class="item-01">
+			                            <a href="https://www.sktinsight.com/101080" target="_blank" title="새창열림">
+			                                <div class="img-wrap">
+			                                    <div class="img-move-wrap" id="test">
+			                                        <img src="./SK telecom_files/01NorthKorea.jpg" alt="영화 ‘강철비’처럼 남북한 통화 가능할까" data-parallax="{&quot;y&quot;: -100, &quot;smoothness&quot;: 10}" style="transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); ">
+			                                    </div>
+			                                </div>
+			                                <div class="txt-wrap">
+			                                    <div class="title-wrap">
+			                                        <p class="title multi-ellipsis" id="social_title1">영화 ‘강철비’처럼 남북한 통화 가능할까</p>
+			                                    </div>
+			                                    <p class="dc is-pc multi-ellipsis" id="social_desc1">“선배, 남한에서 북한에 전화 거는 일이 가능한가요?”최근 영화 ‘강철비’를 본 후배 기자가 물었다. 통신업계 출입 기...</p>
+			                                    <i class="main-sprite is-pc"></i>
+			                                </div>
+			                                <div class="hover-dim"></div>
+			                            </a>
+			                        </li>
+			                        <script>
+			                        	socialObj.desc1 =  "“선배, 남한에서 북한에 전화 거는 일이 가능한가요?”최근 영화 ‘강철비’를 본 후배 기자가 물었다. 통신업계 출입 기자인 후배한테는 강철비에서 남한으로 내려온 최정예요원(정우성)이 북한 측에 연락하는 장면이 유독 눈에 들어왔던 것이다."; 
+			                        	socialObj.title1 = "영화 ‘강철비’처럼 남북한 통화 가능할까";
+				                    </script>
+               
+                        
+                                      <li id="wpInsight02" class="item-02">
+			                            <a href="https://www.sktinsight.com/101057" target="_blank" title="새창열림">
+			                                <div class="img-wrap">
+			                                    <div class="img-move-wrap" id="test">
+			                                        <img src="./SK telecom_files/02MicroInfluencer.jpg" alt="마이크로 인플루언서 시대, 헐리우드 스타보다 친절한 옆집 언니가 좋다" data-parallax="{&quot;y&quot;: -100, &quot;smoothness&quot;: 10}" style="transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); ">
+			                                    </div>
+			                                </div>
+			                                <div class="txt-wrap">
+			                                    <div class="title-wrap">
+			                                        <p class="title multi-ellipsis" id="social_title2">마이크로 인플루언서 시대, 헐리우드 스타보다 친절한 옆집 언니가 좋다</p>
+			                                    </div>
+			                                    <p class="dc is-pc multi-ellipsis" id="social_desc2">인스타그램, 블로그, 유튜브를 통해서 유명해진 사람들을 ‘인플루언서’라고 부릅니다. 이들은 이제 마케팅에서 빼...</p>
+			                                    <i class="main-sprite is-pc"></i>
+			                                </div>
+			                                <div class="hover-dim"></div>
+			                            </a>
+			                        </li>
+			                        <script>
+			                        	socialObj.desc2 =  "인스타그램, 블로그, 유튜브를 통해서 유명해진 사람들을 ‘인플루언서’라고 부릅니다. 이들은 이제 마케팅에서 빼놓을 수 없는 중요한 세력입니다. 이들이 추천하고, 시도하는 다양한 제품들이 팔로워들에게 큰 영향력을 발휘하기 때문이죠. 지난 2017년 코트라가 발간한 보고서에 따르면, 글로벌 인플루언서 마케팅 시장은 2조 원 규모라고 합니다. 그리고 2020년까지 최대 10조6천억 원 규모로 성장할 것으로 추정됩니다. 이처럼 인플루언서들은 강력한 부와 영향력을 행사하는 ‘유명 인사’입니다."; 
+			                        	socialObj.title2 = "마이크로 인플루언서 시대, 헐리우드 스타보다 친절한 옆집 언니가 좋다";
+				                    </script>
+               
+                        
+                                      <li id="wpInsight03" class="item-03">
+			                            <a href="https://www.sktinsight.com/100845" target="_blank" title="새창열림">
+			                                <div class="img-wrap">
+			                                    <div class="img-move-wrap" id="test">
+			                                        <img src="./SK telecom_files/03Petiquette.jpg" alt="슬기로운 공존을 위한 ‘펫티켓’, 지켜주세요!" data-parallax="{&quot;y&quot;: -100, &quot;smoothness&quot;: 10}" style="transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); ">
+			                                    </div>
+			                                </div>
+			                                <div class="txt-wrap">
+			                                    <div class="title-wrap">
+			                                        <p class="title multi-ellipsis" id="social_title3">슬기로운 공존을 위한 ‘펫티켓’, 지켜주세요!</p>
+			                                    </div>
+			                                    <p class="dc is-pc multi-ellipsis" id="social_desc3">반려동물 인구 천만 시대! 하지만 펫티켓(Petiquette)이라는 단어는 여전히 생소한데요. 펫티켓은 펫(Pet)...</p>
+			                                    <i class="main-sprite is-pc"></i>
+			                                </div>
+			                                <div class="hover-dim"></div>
+			                            </a>
+			                        </li>
+			                        <script>
+			                        	socialObj.desc3 =  "반려동물 인구 천만 시대! 하지만 펫티켓(Petiquette)이라는 단어는 여전히 생소한데요. 펫티켓은 펫(Pet)과 에티켓(Etiquette)의 합성어로, 반려동물에 관한 예절을 일컫는 신조어입니다. 특히 최근 반려동물을 둘러싼 이웃간의 갈등이 커지면서 펫티켓에 대한 관심은 더욱 높아지고 있습니다. 그렇다면 좀 더 스마트하게 펫티켓을 지킬 수 있는 방법 없을까요?"; 
+			                        	socialObj.title3 = "슬기로운 공존을 위한 ‘펫티켓’, 지켜주세요!";
+				                    </script>
+               
+                        
+</ul>
+                </div>
+            </div>
+        </div>
+        <div id="sectionNews" class="section news">
+       		 <div class="section-inner inline-fix">
+                <div class="sec-head">
+                    <h3>
+                        <img src="./SK telecom_files/main_title_2.png" alt="SKT News" class="is-mobile">
+                        <img src="./SK telecom_files/main_title_2(1).png" alt="SKT News" class="is-pc">
+                    </h3>
+                    <p class="dc">
+                        <img src="./SK telecom_files/main_dc_2.png" alt="SK텔레콤의 다양한 소식을 전합니다." class="is-pc">
+                    </p>
+                    <a href="http://www.sktelecom.co.kr/advertise/press.do" class="main-sprite-after">더 많은 소식을 확인하세요</a>
+                </div>
+                <div class="sec-body" id="pressContents">              
+                    <a href="http://www.sktelecom.co.kr/advertise/press_detail.do?idx=4410" title="SK텔레콤-부산교통공사,  IoT 기술 도입해 도시철도 더욱 안전하게">
+                        <div class="img-wrap">
+                            <div class="img-move-wrap">
+                                <img src="./SK telecom_files/SKBusanIOT760x675.jpg" alt="SK텔레콤-부산교통공사,  IoT 기술 도입해 도시철도 더욱 안전하게" data-parallax="{&quot;y&quot;: -70, &quot;smoothness&quot;: 10}" style="transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); ">
+                            </div>
+                        </div>
+                        <div class="txt-wrap">
+                            <p class="title multi-ellipsis" id="press_title1">SK텔레콤-부산교통공사,  IoT 기술 도입해 도시철도 더욱 안...</p>
+                            <p class="dc multi-ellipsis" id="press_desc1">SK텔레콤(대표이사 사장 박정호, www.sktelecom.com)은 부산교통공사(사장 박종흠)와 함께 첨단 IoT 및 빅데이터 기술을 활용해 도시철도를 더욱 안전하게 관리해 나가기로 했다. SK텔레콤은 부산교통공사와 스마트도시철도 표준모델 개발과 실증 사업을 추진하는 양해각...</p>
+                        </div>
+                        <div class="hover-dim"></div>
+                    </a>
+                    <script>
+                    	pressObj.desc1 = "SK텔레콤(대표이사 사장 박정호, www.sktelecom.com)은 부산교통공사(사장 박종흠)와 함께 첨단 IoT 및 빅데이터 기술을 활용해 도시철도를 더욱 안전하게 관리해 나가기로 했다. SK텔레콤은 부산교통공사와 스마트도시철도 표준모델 개발과 실증 사업을 추진하는 양해각서를 체결했다고 15일 밝혔다. 양사는 오는 4월부터 약 2년동안 철도 IoT센서를 부산 지하철 역사 등에 구축해 실시간으로 시설물을 모니터링한다. 각 센서는 SK텔레콤의 로라(LoRa)망을 활용한다. IoT 센서로 실시간 모니터링하는 주요 요소는 역사 內 ▲온도 습도 ▲미세먼지 ▲화재발생 ▲에스컬레이터 진동과, 열차 지상구간의 ▲레일온도 ▲전차선 ";
+                    	pressObj.title1 = "SK텔레콤-부산교통공사,  IoT 기술 도입해 도시철도 더욱 안전하게";
+                    </script>
+               
+</div>
+            </div>
+        </div>
+         <div id="sectionQuickLink" class="section quick-link">
+            <ul>
+                <li id="wpQuickLink01" class="item-01">
+                    <div class="box-bg"></div>
+                    <div class="box-cont">
+                        <h3>
+                            <img src="./SK telecom_files/main_title_3.png" alt="투자정보" class="is-mobile">
+                            <img src="./SK telecom_files/main_title_3(1).png" alt="투자정보" class="is-pc">
+                        </h3>
+                        <p class="dc">
+                            <img src="./SK telecom_files/main_dc_3.png" alt="SK텔레콤의 재무정보와 투자정보입니다." class="is-mobile">
+                            <img src="./SK telecom_files/main_dc_3(1).png" alt="SK텔레콤의 재무정보와 투자정보입니다." class="is-pc">
+                        </p>
+                        <div class="link-wrap">
+                            <a href="http://www.sktelecom.co.kr/view/investor/state.do" data-galabel="주식정보">
+                                <span><img src="./SK telecom_files/cont_link_01.png" alt="주식정보" class="is-mobile"><img src="./SK telecom_files/cont_link_01(1).png" alt="주식정보" class="is-pc"></span>
+                                <i class="main-sprite"></i>
+                            </a>
+                            <a href="http://www.sktelecom.co.kr/investor/lib/announce.do" data-galabel="IR자료실">
+                                <span><img src="./SK telecom_files/cont_link_02.png" alt="IR자료실" class="is-mobile"><img src="./SK telecom_files/cont_link_02(1).png" alt="IR자료실" class="is-pc"></span>
+                                <i class="main-sprite"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li id="wpQuickLink02" class="item-02">
+                    <div class="box-bg"></div>
+                    <div class="box-cont">
+                        <h3>
+                            <img src="./SK telecom_files/main_title_4.png" alt="윤리경영" class="is-mobile">
+                            <img src="./SK telecom_files/main_title_4(1).png" alt="윤리경영" class="is-pc">
+                        </h3>
+                        <p class="dc">
+                            <img src="./SK telecom_files/main_dc_4.png" alt="행복한 변화, 행복한 동행, 행복한 참여를 희망합니다." class="is-mobile">
+                            <img src="./SK telecom_files/main_dc_4(1).png" alt="행복한 변화, 행복한 동행, 행복한 참여를 희망합니다." class="is-pc">
+                        </p>
+                        <div class="link-wrap">
+                            <a href="http://ethics.sktelecom.com/" title="새창열림" target="_blank" data-galabel="윤리상담/제보센터">
+                                <span><img src="./SK telecom_files/cont_link_03.png" alt="윤리 상담 / 제보 센터" class="is-mobile"><img src="./SK telecom_files/cont_link_03(1).png" alt="윤리 상담 / 제보 센터" class="is-pc"></span>
+                                <i class="main-sprite"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li id="wpQuickLink03" class="item-03">
+                    <div class="box-bg"></div>
+                    <div class="box-cont txt-center">
+                        <h3 class="hide">인재채용</h3>
+                        <p class="dc">
+                            <img src="./SK telecom_files/main_dc_5.png" alt="Create Customer&#39;s Pride, SK텔레콤은 창의력과 패기가 넘치는 도전자와 함께합니다." class="is-mobile">
+                            <img src="./SK telecom_files/main_dc_5(1).png" alt="Create Customer&#39;s Pride, SK텔레콤은 창의력과 패기가 넘치는 도전자와 함께합니다." class="is-pc">
+                        </p>
+                        <div class="link-wrap">
+                            <a href="http://sktrecruit.sktelecom.com/recruit_user/empNotice/empNoticeInfo" title="새창열림" target="_blank" onclick="$.openPopup(event, this)" data-galabel="채용정보">
+                                <span><img src="./SK telecom_files/cont_link_04.png" alt="채용정보" class="is-mobile"><img src="./SK telecom_files/cont_link_04(1).png" alt="채용정보" class="is-pc"></span>
+                                <i class="main-sprite"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sectionTworld" class="section tworld">
+            <div class="section-inner">
+                <h3 class="hide">Tworld</h3>
+                <ul>
+                    <li class="item-01">
+                        <a href="http://www.tworld.co.kr/outsitens.jsp" target="_blank" title="새창열림" data-galabel="Tworld" class="link-01">
+                            <div class="img-wrap main-sprite-after">
+                                <img src="./SK telecom_files/tworld.png" alt="Tworld" class="is-mobile">
+                                <img src="./SK telecom_files/tworld(1).png" alt="Tworld" class="is-pc">
+                            </div>
+                        </a>
+                        <a href="http://shop.tworld.co.kr/handler/ShopTworldMain-Start" target="_blank" title="새창열림" data-galabel="T다이렉트샵" class="link-02">
+                            <div class="img-wrap main-sprite-after">
+                                <img src="./SK telecom_files/tdirect.png" alt="다이렉트샵" class="is-mobile">
+                                <img src="./SK telecom_files/tdirect(1).png" alt="다이렉트샵" class="is-pc">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item-02 sub">
+                        <div class="only-mobile">
+                            <a href="http://m2.tworld.co.kr/jsp/op.jsp?p=w947" target="_blank" title="새창열림" data-galabel="TworldM_모바일T월드">
+                                <i class="main-sprite"></i>
+                                <span>모바일 T월드</span>
+                            </a>
+                        </div>
+                        <div class="only-pc">
+                            <a href="http://www.tworld.co.kr/normal.do?serviceId=SDUMMY0001&amp;viewId=V_CENT0781" target="_blank" title="새창열림" data-galabel="TworldPC_사용금액조회">
+                                <i class="main-sprite"></i>
+                                <span>사용금액조회</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="item-03 sub">
+                        <div class="only-mobile">
+                            <a href="http://m2.tworld.co.kr/jsp/op.jsp?p=w948" target="_blank" title="새창열림" data-galabel="TworldM_사용금액조회">
+                                <i class="main-sprite"></i>
+                                <span>사용금액조회</span>
+                            </a>
+                        </div>
+                        <div class="only-pc">
+                            <a href="http://www.tworld.co.kr/normal.do?serviceId=S_BILL0148&amp;viewId=V_CENT0591" target="_blank" title="새창열림" data-galabel="TworldPC_잔여기본통화량">
+                                <i class="main-sprite"></i>
+                                <span>잔여기본통화량</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="item-04 sub">
+                        <div class="only-mobile">
+                            <a href="http://m2.tworld.co.kr/jsp/op.jsp?p=w949" target="_blank" title="새창열림" data-galabel="TworldM_리필선물충전">
+                                <i class="main-sprite"></i>
+                                <span>리필/선물/충전</span>
+                            </a>
+                        </div>
+                        <div class="only-pc">
+                            <a href="https://www.tworld.co.kr/normal.do?serviceId=S_ETC_0055&amp;viewId=V_CENT5008" target="_blank" title="새창열림" data-galabel="TworldPC_리필선물충전">
+                                <i class="main-sprite"></i>
+                                <span>리필/선물/충전</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="sectionSNS" class="section sns">
+            <div class="section-inner">
+                <h3>
+                    <img src="./SK telecom_files/main_title_6.png" alt="SK텔레콤을 다양하게 만나보세요!" class="is-mobile">
+                    <img src="./SK telecom_files/main_title_6(1).png" alt="SK텔레콤을 다양하게 만나보세요!" class="is-pc">
+                </h3>
+                <ul class="outer-ul">
+                    <li class="item-01">
+                        <ul class="inner-ul">
+                            <li class="inner-item-01"><a href="http://www.sktinsight.com/" title="SKT Insight(새창열림)" target="_blank" data-galabel="SNS_Insight"><img src="./SK telecom_files/sns_01.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_01(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-02"><a href="http://post.naver.com/my.nhn?memberNo=34920570" title="네이버포스트(새창열림)" target="_blank" data-galabel="SNS_네이버포스트"><img src="./SK telecom_files/sns_02.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_02(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                        </ul>
+                    </li>
+                    <li class="item-02">
+                        <ul class="inner-ul">
+                            <li class="inner-item-01"><a href="https://www.facebook.com/sktworld" title="페이스북(새창열림)" target="_blank" data-galabel="SNS_페이스북"><img src="./SK telecom_files/sns_03.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_03(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-02"><a href="http://youtube.com/sktelecom" title="유튜브(새창열림)" target="_blank" data-galabel="SNS_유튜브"><img src="./SK telecom_files/sns_04.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_04(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-03"><a href="https://story.kakao.com/#ch/sktelecom" title="카카오스토리(새창열림)" target="_blank" data-galabel="SNS_카카오스토리"><img src="./SK telecom_files/sns_05.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_05(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-04"><a href="https://twitter.com/sktelecom" title="트위터(새창열림)" target="_blank" data-galabel="SNS_트위터"><img src="./SK telecom_files/sns_06.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_06(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-05"><a href="https://plus.google.com/+SKtelecom" title="구글플러스(새창열림)" target="_blank" data-galabel="SNS_구글플러스"><img src="./SK telecom_files/sns_07.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_07(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                            <li class="inner-item-06"><a href="https://instagram.com/sktworld/" title="인스타그램(새창열림)" target="_blank" data-galabel="SNS_인스타그램"><img src="./SK telecom_files/sns_08.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_08(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                        </ul>
+                    </li>
+                    <li class="item-03">
+                        <ul class="inner-ul">
+                            <li class="inner-item-01"><a href="http://www.globalskt.com/" title="Global Blog(새창열림)" target="_blank" data-galabel="SNS_글로벌블로그"><img src="./SK telecom_files/sns_09.png" alt="SKT Insight" class="is-pc"><img src="./SK telecom_files/sns_09(1).png" alt="SKT Insight" class="is-mobile"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+      
+    <!-- content end -->
+    <!-- page top start -->
+    
+    <!-- page top end -->
+    <!-- footer start -->
+    <div class="footer" id="footerCommon">
+	 <h2 class="txt-hide layout-area-title">하단 영역</h2>
+        <!-- family site start -->
+        <div class="family-site" tabindex="-1">
+            <div class="family-site-inner">
+                <div class="family-site-index index-01">
+                    <p class="family-site-title text-img-toggle"><img src="./SK telecom_files/family_site_text_01.png" alt="SK Telecom" draggable="false"><span>SK telecom</span></p>
+                    <ul class="menu-tree">
+                        <li class="family-site-item">
+                            <span>상품 / 서비스</span>
+                            <ul>
+                                <li>
+                                    <a href="http://www.tworld.co.kr/outsitens.jsp" target="_blank" title="새창열림">T world</a>
+                                    <p class="description">SK텔레콤 이동통신<br>대표 사이트</p>
+                                </li>
+                                <li>
+                                    <a href="http://www.tworlddirect.com/" target="_blank" title="새창열림">T world 다이렉트</a>
+                                    <p class="description">SK텔레콤 공식온라인 맞춤샵</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="http://www.nugu.co.kr/main/" target="_blank" title="새창열림">NUGU</a>
+                                    <p class="description">인공지능 음성인식 디바이스</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="family-site-item">
+                            <span>기술</span>
+                            <ul>
+                                <li>
+                                    <a href="http://tum.sktelecom.com/" target="_blank" title="새창열림">T.um</a>
+                                    <p class="description">SK텔레콤 기술 가상체험관</p>
+                                </li>
+                                <li>
+                                    <a href="http://www.sktcoverage.com/" target="_blank" title="새창열림">커버리지맵</a>
+                                    <p class="description">SK텔레콤의 유무선 통신<br>이용가능 지역 정보 제공</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="https://developers.sktelecom.com/" target="_blank" title="새창열림">T developers</a>
+                                    <p class="description">SK텔레콤의 최신기술소개 및<br>다양한 개발 도구 제공</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="family-site-item">
+                            <span>커뮤니케이션</span>
+                            <ul>
+                                <li>
+                                    <a href="https://www.sktinsight.com/" target="_blank" title="새창열림">SK텔레콤 Insight</a>
+                                    <p class="description">SK텔레콤 공식 블로그</p>
+                                </li>
+                                <li>
+                                    <a href="http://post.naver.com/my.nhn?memberNo=34920570" target="_blank" title="새창열림">스크랩</a>
+                                    <p class="description">SK텔레콤 공식 네이버 포스트</p>
+                                </li>
+                                <li>
+                                    <a href="http://blog.naver.com/sktreporter" target="_blank" title="새창열림">SKT 캠퍼스리포터</a>
+                                    <p class="description">SK텔레콤 대학생 기자단</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="http://www.globalskt.com/" target="_blank" title="새창열림">SKT 글로벌 블로그</a>
+                                    <p class="description">SK텔레콤 공식 영문 블로그</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="family-site-item">
+                            <span>사회공헌</span>
+                            <ul>
+                                <li>
+                                    <a href="http://sktincubator.com/" target="_blank" title="새창열림">행복창업지원센터</a>
+                                    <p class="description">SK텔레콤 창업지원 포털</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="http://ttogether.sktelecom.com/" target="_blank" title="새창열림">T together</a>
+                                    <p class="description">SK텔레콤 고객참여<br>사회공헌 포털</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="family-site-item">
+                            <span>스포츠</span>
+                            <ul>
+                                <li>
+                                    <a href="http://www.sksports.net/" target="_blank" title="새창열림">SK 스포츠</a>
+                                    <p class="description">SK 스포츠 구단 소개</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="http://www.skwyverns.com/Wyverns/main.asp" target="_blank" title="새창열림">SK 와이번스</a>
+                                    <p class="description">SK 와이번스 소개</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="family-site-item">
+                            <span>기업 서비스</span>
+                            <ul>
+                                <li>
+                                    <a href="http://www.biztworld.co.kr/" target="_blank" title="새창열림">T world for Business</a>
+                                    <p class="description">기업솔루션 및 법인폰</p>
+                                </li>
+                                <li>
+                                    <a href="http://open2u.sktelecom.com/" target="_blank" title="새창열림">Open 2U</a>
+                                    <p class="description">SK텔레콤 협력사<br>지원 프로그램</p>
+                                </li>
+                                <li class="last-obj">
+                                    <a href="http://lora.sktiot.com/" target="_blank" title="새창열림">IoT Portal</a>
+                                    <p class="description">IoT 전용망 운영</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="family-site-index index-02">
+                    <p class="family-site-title text-img-toggle"><img src="./SK telecom_files/family_site_text_02.png" alt="Family Site" draggable="false"><span>Family Site</span></p>
+                    <ul>
+                        <li class="family-site-item">
+                            <a href="http://www.sk.co.kr/" target="_blank" title="새창열림">SK(주)</a>
+                            <p class="description">지주회사</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.skbroadband.com/" target="_blank" title="새창열림">SK 브로드밴드</a>
+                            <p class="description">초고속인터넷, 인터넷전화,<br>IPTV 등 유선기반 서비스</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.skhynix.com/" target="_blank" title="새창열림">SK 하이닉스</a>
+                            <p class="description">종합 반도체</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.skplanet.com/" target="_blank" title="새창열림">SK 플래닛</a>
+                            <p class="description">Integrated &amp; Personalized-<br>Commerce</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.sktelink.com/" target="_blank" title="새창열림">SK 텔링크</a>
+                            <p class="description">국제전화 및 인터넷 전화<br>서비스</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.sktechx.com/main" target="_blank" title="새창열림">SK 테크엑스</a>
+                            <p class="description">ICT 서비스 전문기업</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.skcomms.co.kr/" target="_blank" title="새창열림">SK 커뮤니케이션즈</a>
+                            <p class="description">인터넷포털서비스</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.iriver.co.kr/" target="_blank" title="새창열림">아이리버</a>
+                            <p class="description">전자기기 브랜드</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://entrixco.com/" target="_blank" title="새창열림">엔트릭스</a>
+                            <p class="description">Cloud Streaming 솔루션</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.psnmarketing.com/" target="_blank" title="새창열림">PS&amp;Marketing</a>
+                            <p class="description">ICT전문유통</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="https://home.nsok.co.kr/main.do" target="_blank" title="새창열림">NSOK</a>
+                            <p class="description">보안솔루션</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.networkons.com/" target="_blank" title="새창열림">네트웍오앤에스</a>
+                            <p class="description">SK텔레콤 네트워크 운용</p>
+                        </li>
+                        <li class="family-site-item">
+                            <a href="http://www.serviceace.co.kr/" target="_blank" title="새창열림">서비스에이스</a>
+                            <p class="description">SK텔레콤 고객 서비스</p>
+                        </li>
+                        <li class="family-site-item last-obj">
+                            <a href="https://www.svctop.co.kr/index" target="_blank" title="새창열림">서비스탑</a>
+                            <p class="description">SK텔레콤 고객 서비스</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- family site end -->
+        <div class="footer-inner">
+            <button type="button" class="btn-family-site-toggle" title="FAMILY SITE">
+                <span>
+                    <img class="img-small" src="./SK telecom_files/btn_family_site.png" alt="FAMILY SITE" draggable="false">
+                    <img class="img-large" src="./SK telecom_files/btn_family_site(1).png" alt="FAMILY SITE" draggable="false">
+                </span>
+            </button>
+            <ul>
+                <li>
+                    <ul class="footer-link">
+                        <li><a href="http://www.sktelecom.co.kr/view/footer/privacy.do">개인정보처리방침</a></li>
+                        <li><a href="http://www.sktelecom.co.kr/view/footer/email-reject.do">이메일주소무단수집거부</a></li>
+                        <li><a href="http://www.tworld.co.kr/tglink.jsp?urlname=wTG_0957" target="_blank">이용약관</a></li>
+                        <li><a href="http://www.msafer.or.kr/main.jsp" target="_blank">명의도용 방지서비스</a></li>
+                        <li class="last-obj"><a href="http://www.sktelecom.co.kr/view/footer/wholesale.do">도매제공이용문의</a></li>
+                    </ul>
+                    <div class="text-wrap">
+                        <p class="footer-address">우편번호 : 04539&nbsp;<span>서울특별시 중구 을지로65(을지로2가) SK T-타워&nbsp;</span><span>SK텔레콤(주) 대표이사 사장 박정호</span></p>
+                        <p class="footer-copyright">COPYRIGHT SK TELECOM CO., LTD. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="footer-sns">
+                        <span>SNS</span>
+                        <ul>
+                            <li><a href="https://www.facebook.com/sktworld" title="SKT 페이스북(새창)" target="_blank"><img src="./SK telecom_files/icon_facebook.png" alt="SK텔레콤 페이스북 바로가기" draggable="false"></a></li>
+                            <li><a href="http://post.naver.com/my.nhn?memberNo=34920570" title="SKT 네이버포스트(새창)" target="_blank"><img src="./SK telecom_files/icon_naverpost.png" alt="SK텔레콤 네이버포스트 바로가기" draggable="false"></a></li>
+                            <li><a href="http://youtube.com/sktelecom" title="SKT 유튜브(새창)" target="_blank"><img src="./SK telecom_files/icon_youtube.png" alt="SK텔레콤 유튜브 바로가기" draggable="false"></a></li>
+                            <li><a href="https://story.kakao.com/#ch/sktelecom" title="SKT 카카오스토리(새창)" target="_blank"><img src="./SK telecom_files/icon_kakaostory.png" alt="SK텔레콤 카카오스토리 바로가기" draggable="false"></a></li>
+                            <li><a href="https://plus.google.com/+SKtelecom" title="SKT 구글플러스(새창)" target="_blank"><img src="./SK telecom_files/icon_googleplus.png" alt="SK텔레콤 구글플러스 바로가기" draggable="false"></a></li>
+                            <li><a href="http://sktform.co.kr/" title="SKT 블로그(새창)" target="_blank"><img src="./SK telecom_files/icon_blog.png" alt="SK텔레콤 블로그 바로가기" draggable="false"></a></li>
+                            <li><a href="https://twitter.com/sktelecom" title="SKT 트위터(새창)" target="_blank"><img src="./SK telecom_files/icon_twitter.png" alt="SK텔레콤 트위터 바로가기" draggable="false"></a></li>
+                            <li><a href="https://instagram.com/sktworld/" title="SKT 인스타그램(새창)" target="_blank"><img src="./SK telecom_files/icon_instagram.png" alt="SK텔레콤 인스타그램 바로가기" draggable="false"></a></li>
+                        </ul>
+                    </div>
+                    <ul class="footer-ethics clear-both">
+                        <li><a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" target="_blank"><img class="web-accessibility-mark" src="./SK telecom_files/footer_webaccessibilitymark.png" title="국가 공인 인증기관 : 웹와치" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" draggable="false" style="width: 105px; height: auto;"></a></li>
+                        <li><a href="http://www.i-award.or.kr/Web/Prize/2017/Awarded03.aspx" target="_blank" title="WEB AWARD KOREA"><img src="./SK telecom_files/footer_webaward.png" alt="WEB AWARD KOREA 14th NOMINEE" draggable="false" style="width: 52px; height: auto;"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-64687523-1', 'auto');
+  //ga('create', 'UA-63930534-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+	
+
+	
+
+	
+
+	</div>
+    <!-- footer end -->
+<button type="button" id="btn_page_top" style="display: none;">TOP</button></div>
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	</body></html>

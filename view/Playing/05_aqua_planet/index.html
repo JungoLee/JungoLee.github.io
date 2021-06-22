@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+<!--<![endif]-->
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="utf-8">
+	<title> </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+
+	<link href="./common.css" type="text/css" rel="stylesheet">
+	<link href="./reset.css" type="text/css" rel="stylesheet">
+	
+</head>
+
+<body class="gate">
+	<!--[if lte IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p><![endif]-->
+	<div id="wrap">
+		<div id="container">
+			<div class="gate-area">
+				<div class="dimm-area">
+					<div class="title">
+						<p>AQUA PLANET</p>
+						<p>드넓은 태양을 품은 아름다운 바다의 별</p>
+					</div>
+					<ul class="gate-list">
+						<li>
+							<a href="#">
+								<span class="which">
+                                    <span class="aqua_title">AQUA PLANET</span>
+                                    JEJU
+                                </span>
+                                <span class="to_link">
+                                    
+                                </span>
+
+								<span class="event">Event<span>한화 아쿠아플라넷 제주 개관 7주년 제주도민 특별할인</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+                                
+								<span class="which">
+                                    <span class="aqua_title">AQUA PLANET</span>
+                                    YEOSU
+								</span>
+								<span class="event">Event<span>호국보훈 의 달맞이 JUNE비한
+										<br> 특별 회원가입 이벤트 최대 50% 할인</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+                                
+								<span class="which">
+                                    <span class="aqua_title">AQUA PLANET</span>
+                                    ILSAN
+								</span>
+								<span class="event">Event<span>오직 신한카드 고객님만을 위한 7~8일 헤택!</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+                                
+								<span class="which">
+                                    <span class="aqua_title">AQUA PLANET</span>
+                                    63
+								</span>
+								<span class="event">Event<span>With my Vacation 63
+										<br> 올해여름은 우리모두다함께
+										<br> 63빌딩과 함께 GOGO!!</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+                                
+								<span class="which">
+                                    <span class="aqua_title">AQUA PLANET</span>
+                                    GWANGGYO
+								</span>
+								<span class="event">Event<span>With my Vacation 63
+										<br> 올해여름은 우리모두다함께
+										<br> 63빌딩과 함께 GOGO!!</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script  src="//code.jquery.com/jquery-latest.min.js"></script>
+</body>
+
+</html>
+
+<script>
+    function loopAnimation(_target,callback,callback2){
+        var loopTg = $(_target);
+        var tgLength = loopTg.length;					
+        var i = 0 ;
+        var setInterbalId = setInterval(function(){
+            if(i<tgLength){
+                loopTg.eq(i).addClass('animation');
+                i++;
+                callback2();
+            } else if (i==tgLength){
+                clearInterval(setInterbalId);
+                callback();
+            }
+        },150)
+        
+        
+    }
+    
+    $('.gate-area li').on('mouseover',function(){
+        $('.gate-area li').removeClass('hover');
+        $(this).addClass('hover');
+        loopAnimation('.gate-area li span',callback,callback2)
+    });
+
+    loopAnimation('.gate-list>li:not(.background)',function(){
+        // loopAnimation('.event',null,function(){
+        //     loopAnimation('.event>span')
+        // });
+    },null);
+</script>
