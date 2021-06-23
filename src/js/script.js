@@ -6,9 +6,9 @@ function start(target){
 }
 
 function scrollClass(target,offset){
-    
+
     let tg = $(target)
-    
+
 
     $(window).scroll(function(){
         let sct = $(window).scrollTop();
@@ -23,13 +23,13 @@ jQuery(document).ready(function () {
 
     /////////////////// MOUSEMOVE EVENT
 
-    /////////////////////////////////////////////////////////		
+    /////////////////////////////////////////////////////////
 
     $(window).on('mousemove', function (event) {
 
         var posX = event.pageX;
         var posY = event.pageY;
-        
+
 
 
         $('.contents_wrap>.content').each(function () {
@@ -63,7 +63,7 @@ jQuery(document).ready(function () {
                 screen.find('a').removeClass('on');
             }
 
-            
+
 
 
         });
@@ -75,7 +75,7 @@ jQuery(document).ready(function () {
 
     ///////////////////DOT DOT DOT
 
-    /////////////////////////////////////////////////////////	
+    /////////////////////////////////////////////////////////
 
 
     setInterval(function () {
@@ -109,19 +109,19 @@ jQuery(document).ready(function () {
 
         tg.addClass('on');
         career.not(tg).addClass('off');
-        
+
     }, function () {
         let tg = $(this);
         tg.removeClass('on');
         career.not(tg).removeClass('off');
     });
 
-    
+
     /////////////////////////////////////////////////////////
 
     /////////////////// Screen percent
 
-    /////////////////////////////////////////////////////////	
+    /////////////////////////////////////////////////////////
     var moveTag = $('.content>.screen');
 
     moveTag.click(function(){
@@ -130,7 +130,7 @@ jQuery(document).ready(function () {
         var hrefs = moveChild.attr('href');
         moveChild.attr("href", hrefs);
         window.open.href = moveChild.attr("href");
-        
+
       });
 
 
@@ -140,25 +140,25 @@ jQuery(document).ready(function () {
     let mobileScroll = $('.screen');
     if ($(window).width() < 767){
         mobileScroll.each(function(){
-            let tg = $(this); 
-            let tgOffTop = tg.offset().top;           
-            
+            let tg = $(this);
+            let tgOffTop = tg.offset().top;
+
             $(window).scroll(function(){
                 let sct = $(window).scrollTop();
-                
+
                 if (sct + 300 > tgOffTop ){
                     tg.addClass('on');
                     tg.find('a').addClass('on');
-                    tg.find('h3').addClass('on'); 
-                    
+                    tg.find('h3').addClass('on');
+
                 } else if (sct < tgOffTop ){
                     tg.removeClass('on');
                     tg.find('a').removeClass('on');
-                    tg.find('h3').removeClass('on'); 
-                } 
-                
+                    tg.find('h3').removeClass('on');
+                }
+
             })
-        }); 
+        });
     }
 
     start('.text_area>span');
@@ -169,21 +169,21 @@ jQuery(document).ready(function () {
     })
 
     $('.header .mobile_btn>li>a').click(function(){
-        
+
         var selectVal = $(this).text();
         var cntClass = $('.content.'+selectVal+'');
         if(selectVal == "Show all"){
             $('.content').show();
             return false;
-        }else if(selectVal == "Kakao" || selectVal == "google_re"){
-            
+        }else if(selectVal == "Kakao" || selectVal == "google_re" || selectVal == "3d Test"){
+
         }else{
             $('.content').hide();
             cntClass.show();
             $('.content.ing').show();
             return false;
         }
-        
+
     });
 });
 
