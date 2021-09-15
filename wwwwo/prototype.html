@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+<!--<![endif]-->
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="utf-8">
+  <title> 공통타이틀입력</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link href="../../css/common.css" type="text/css" rel="stylesheet">
+  <style>
+    .prototype-group {
+      margin-bottom: 50px;
+    }
+
+    .prototype-group hr {
+      display: inline;
+      border: 0;
+      padding: 0 2px 0 2px;
+    }
+
+    .prototype-tit01 {
+      text-align: left;
+      font-size: 20px;
+      padding: 10px 10px 10px 10px;
+      background: #cccccc;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .input-checkbox {
+      margin-right: 10px;
+    }
+
+    .input-radio {
+      margin-right: 10px;
+    }
+
+    .code-info {
+      display: block;
+      background: #dceef9;
+      color: #000000;
+      padding: 10px;
+      border: 1px dotted #000000;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .btn-info-view {
+      cursor: pointer;
+      margin-top: 10px;
+      background: #000000;
+      color: #ffffff;
+      height: 30px;
+      padding: 0 30px 0 10px;
+      position: relative;
+    }
+
+    .btn-info-view:before {
+      display: block;
+      content: '';
+      width: 9px;
+      height: 1px;
+      background: #ffffff;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -1px;
+    }
+
+    .btn-info-view:after {
+      display: block;
+      content: '';
+      width: 1px;
+      height: 9px;
+      background: #ffffff;
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      margin-top: -5px;
+    }
+
+    .code-info-view {
+      display: none;
+      background: #DCEEE5;
+      color: #000000;
+      padding: 10px;
+      border: 1px dotted #000000;
+      margin-top: 0;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .btn-info-view.on+.code-info-view {
+      display: block;
+    }
+
+    .btn-info-view.on:after {
+      display: none;
+    }
+
+    .prototype-table-sample01 {
+      width: 100%;
+      table-layout: fixed;
+      margin-top: 10px;
+    }
+
+    .prototype-table-sample01 td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .prototype-table-sample01 th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 10px;
+      background: #eeeeee;
+    }
+
+  </style>
+  <script src="undefinedundefinedjquery.js"></script>
+  <script src="undefinedundefinedjquery.scrollbar.min.js"></script>
+  <script>
+    // 프로토타입 템플릿에서 사용 되는 스크립트만 넣어 주세요.
+    // 프로토타입별 스크립트는 프로타입이름.pug 에 넣어 주면 됩니다.
+    $(function() {
+
+      $('.btn-info-view').on('click', function(e) {
+        e.preventDefault();
+        var isAlreadyOpen = $(this).hasClass('on');
+
+        if (!isAlreadyOpen) {
+          $(this).addClass('on');
+        } else {
+          $(this).removeClass('on');
+        }
+      });
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <!--[if lte IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p><![endif]-->
+  <div id="wrap">
+    <div class="main-container" id="container">
+      <h1 class="hide-txt">프로토타입</h1>
+      <div id="content" role="main">
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 기본</h2>
+          <pre class="code-info"># 소스내 스페이스 공백을 사용하고 space 4칸 범위를 사용합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 기본 네이밍 규칙</h2>
+          <pre class="code-info"># 네이밍은 기본 규칙을 따르지만 상황에 따라 추가 및 변경이 가능합니다.
+# 예약어는 고정 네이밍, 클래스 단어는 조합해서 사용 가능 합니다.
+# 아래 규칙을 css, html, images 에 모두 적용 합니다.
+# 네이밍은 직관적으로 합니다. 의미를 못 알아볼 정도의 함축은 하지 않습니다.</pre>
+          <pre></pre>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">기본 레이아웃 아이디 예약어</th>
+            </tr>
+            <tr>
+              <td>wrap</td>
+              <td>header</td>
+              <td>container</td>
+              <td>content</td>
+            </tr>
+            <tr>
+              <td>footer</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">기본 레이아웃 클래스 예약어</th>
+            </tr>
+            <tr>
+              <td>header-content</td>
+              <td>skipnav</td>
+              <td>footer-content</td>
+              <td>dimm</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">팝업 레이아웃 클래스 예약어</th>
+            </tr>
+            <tr>
+              <td>popup-wrap</td>
+              <td>popup-dialog</td>
+              <td>popup-header</td>
+              <td>popup-container</td>
+            </tr>
+            <tr>
+              <td>popup-content</td>
+              <td>popup-footer</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">모달 레이아웃 클래스 예약어</th>
+            </tr>
+            <tr>
+              <td>modal-wrap</td>
+              <td>modal-dialog</td>
+              <td>modal-header</td>
+              <td>modal-container</td>
+            </tr>
+            <tr>
+              <td>modal-content</td>
+              <td>modal-footer</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">영역구분 클래스 단어</th>
+            </tr>
+            <tr>
+              <td>wrap</td>
+              <td>area</td>
+              <td>group</td>
+              <td>container</td>
+            </tr>
+            <tr>
+              <td>layout</td>
+              <td>body</td>
+              <td>section</td>
+              <td>article</td>
+            </tr>
+            <tr>
+              <td>header</td>
+              <td>footer</td>
+              <td>inner</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">메뉴 클래스 단어</th>
+            </tr>
+            <tr>
+              <td>글로벌 네비게이션 - gnb</td>
+              <td>로컬 네비게이션 - lnb</td>
+              <td>사이드 네비게이션 - snb</td>
+              <td>메뉴 - menu, nav</td>
+            </tr>
+            <tr>
+              <td>브레드크럼 - breadcrumb</td>
+              <td>스킵 네비게이션 - skipnav</td>
+              <td>스크롤스파이 - scrollspy</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">형태 클래스 단어 1</th>
+            </tr>
+            <tr>
+              <td>버튼 - btn</td>
+              <td>블릿 - bu, bullet</td>
+              <td>아이콘 - ico</td>
+              <td>버튼 - btn</td>
+            </tr>
+            <tr>
+              <td>라운드 - round</td>
+              <td>사각 - square</td>
+              <td>원 - circle</td>
+              <td>별 - star</td>
+            </tr>
+            <tr>
+              <td>그림자 - shadow</td>
+              <td>화살표 - arrow</td>
+              <td>라인 - line</td>
+              <td>점 - dot</td>
+            </tr>
+            <tr>
+              <td>바 - bar</td>
+              <td>숫자 - num</td>
+              <td>텍스트 - txt, text</td>
+              <td>제목 - title, tit</td>
+            </tr>
+            <tr>
+              <td>탭 - tab</td>
+              <td>테이블 - table, tbl</td>
+              <td>썸네일 - thumb</td>
+              <td>박스 - box</td>
+            </tr>
+            <tr>
+              <td>이미지 - img, image, images</td>
+              <td>컨텐츠 - content, cont</td>
+              <td>목록 - list</td>
+              <td>배경 - bg</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">형태 클래스 단어 2</th>
+            </tr>
+            <tr>
+              <td>순위 - rank, ranking</td>
+              <td>집 - home</td>
+              <td>로고 - logo</td>
+              <td>광고 - ad</td>
+            </tr>
+            <tr>
+              <td>프로그래스 - progress</td>
+              <td>스텝 - step</td>
+              <td>임시 - temp</td>
+              <td>정보 - info</td>
+            </tr>
+            <tr>
+              <td>코드 - code</td>
+              <td>프로토타입 - prototype</td>
+              <td>스페셜 - special</td>
+              <td>임시 - @</td>
+            </tr>
+            <tr>
+              <td>상세내용 - desc, detail</td>
+              <td>위젯 - widget</td>
+              <td>댓글 - comment</td>
+              <td>답글 - reply</td>
+            </tr>
+            <tr>
+              <td>시간 - time</td>
+              <td>copyright - copyright</td>
+              <td>배너 - banner</td>
+              <td>파일 - file</td>
+            </tr>
+            <tr>
+              <td>폼 - form</td>
+              <td>체크박스 - checkbox</td>
+              <td>라디오 - radio</td>
+              <td>셀렉트 - select</td>
+            </tr>
+            <tr>
+              <td>링크 - link</td>
+              <td>달력 - calendar</td>
+              <td>인풋 - input</td>
+              <td>텍스트필드 - textarea</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">상태 클래스 단어 1</th>
+            </tr>
+            <tr>
+              <td>다운로드 - download</td>
+              <td>업로드 - upload</td>
+              <td>첨부 - add</td>
+              <td>취소 - cancel</td>
+            </tr>
+            <tr>
+              <td>확인 - confirm</td>
+              <td>수정 - modify</td>
+              <td>쓰기 - write</td>
+              <td>삭제 - del, delete</td>
+            </tr>
+            <tr>
+              <td>읽기 - read</td>
+              <td>검색 - search</td>
+              <td>찾기 - find</td>
+              <td>등록 - reg, registration</td>
+            </tr>
+            <tr>
+              <td>전송 - submit</td>
+              <td>설치 - install, setup</td>
+              <td>정지 - stop</td>
+              <td>실행 - run, play</td>
+            </tr>
+            <tr>
+              <td>이전, 다음 - prev, next</td>
+              <td>위, 아래 - up, down</td>
+              <td>새로고침 - refresh</td>
+              <td>열기, 닫기 - open, close</td>
+            </tr>
+            <tr>
+              <td>축소 - reduction</td>
+              <td>확장 - expand</td>
+              <td>접기 - unfold</td>
+              <td>잠금 - lock</td>
+            </tr>
+            <tr>
+              <td>해제 - unlock</td>
+              <td>강조 - point, emph, spot</td>
+              <td>카운트 - count</td>
+              <td>마지막 - last, end</td>
+            </tr>
+            <tr>
+              <td>처음 - first</td>
+              <td>시작 - start</td>
+              <td>조금더 - more</td>
+              <td>신규 - new</td>
+            </tr>
+            <tr>
+              <td>업데이트 - update</td>
+            </tr>
+          </table>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">상태 클래스 단어 2</th>
+            </tr>
+            <tr>
+              <td>비활성 - off, inactive</td>
+              <td>활성 - on, active</td>
+              <td>오버 - over</td>
+              <td>포커스 - focus</td>
+            </tr>
+            <tr>
+              <td>체크 - checked</td>
+              <td>영역 선택 불가 - disabled</td>
+              <td>위치 - top, middle, bottom, left, right</td>
+              <td>수평, 수직 - h, v</td>
+            </tr>
+          </table>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] CSS</h2>
+          <pre class="code-info"># 특정 레이아웃을 제외하고 ID 를 사용하지 않습니다.
+# css 클래스 단어 구분은 ( - ) 대쉬를 사용 합니다.
+# css line-height 는 단위를 넣지 않고 사용합니다. (예: line-height:1.5)
+# 위 비율을 계산 하는 방법은 PSD 에서 font-size가 20px 이고 line-height 가 34 이면 34 나누기 20 하면 1.7 이라는 비율이 나옵니다. 그 값을 사용하면 됩니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] HTML</h2>
+          <pre class="code-info"># html5 문서 타입을 사용 합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] Images</h2>
+          <pre class="code-info"># 헤더, 푸터의 공통 이미지들은 css sprite 를 사용 합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 웹접근성</h2>
+          <pre class="code-info"># 빈 태그에는 aria-hidden="true" 속성을 넣어줍니다. (예: &lt;em class="ico" aria-hidden="true"&gt;&lt;/em&gt;)
+
+# 모바일에서 모든 a 태그는 아래의 속성이 공통으로 적용되어 있습니다.
+# content:'공백문자', 아래와 같이 공백문자를 넣어서 초점영역을 정확히 잡아주는 역할을 합니다.
+# a 태그의 before 속성을 사용하지 않도록 주의 합니다.
+a:before{
+    content: '　';position:absolute;font-size:0;
+}
+
+# 새창으로 열리는 링크는 title="새창열림" 으로 통일합니다.
+# 해당 기능의 대한 내용이 있을 경우 title 을 또 사용해서 내용이 중복되지 않도록 합니다.
+    예) &#60;a href="#" title="더보기">더보기&#60;/a>
+
+# talbe - caption 입력 형식
+# 테이블 이름: th, th, th, th
+# 위와 같이 테이블 이름과 th 항목만 나열합니다. 뒤에 무슨무슨 테이블이라는 단어도 붙이지 않습니다.
+# caption HTML 가이드도 확인 바랍니다.</pre>
+          <pre></pre>
+          <table class="prototype-table-sample01">
+            <tr>
+              <th colspan="4">접근성 텍스트</th>
+            </tr>
+            <tr>
+              <th>국문</th>
+              <th>영문</th>
+              <th>국문</th>
+              <th>영문</th>
+            </tr>
+            <tr>
+              <td>새창열기</td>
+              <td>Opens in new window</td>
+              <td>선택됨</td>
+              <td>Selected</td>
+            </tr>
+            <tr>
+              <td>축소됨</td>
+              <td>Reduced</td>
+              <td>확장됨</td>
+              <td>Expanded</td>
+            </tr>
+            <tr>
+              <td>전체메뉴 열기</td>
+              <td>Open entire menu</td>
+              <td>전체메뉴 닫기</td>
+              <td>Close entire menu</td>
+            </tr>
+            <tr>
+              <td>계열사 선택 퀵메뉴</td>
+              <td>Affiliate selection quick menu</td>
+              <td>페이지 상단으로 이동</td>
+              <td>Go to top</td>
+            </tr>
+            <tr>
+              <td>첫 페이지</td>
+              <td>First page</td>
+              <td>이전 페이지</td>
+              <td>Previous page</td>
+            </tr>
+            <tr>
+              <td>다음 페이지</td>
+              <td>Next page</td>
+              <td>마지막 페이지</td>
+              <td>Last page</td>
+            </tr>
+            <tr>
+              <td>이전 컨텐츠</td>
+              <td>Previous</td>
+              <td>다음 컨텐츠</td>
+              <td>Next</td>
+            </tr>
+            <tr>
+              <td>왼쪽으로 컨텐츠 스크롤</td>
+              <td>Scroll contents to the left</td>
+              <td>오른쪽으로 컨텐츠 스크롤</td>
+              <td>Scroll contents to the right</td>
+            </tr>
+            <tr>
+              <td>언어선택</td>
+              <td>Language selection</td>
+              <td>국문</td>
+              <td>Korean</td>
+            </tr>
+            <tr>
+              <td>이전 컨텐츠</td>
+              <td>Previous</td>
+              <td>다음 컨텐츠</td>
+              <td>Next</td>
+            </tr>
+            <tr>
+              <td>영문</td>
+              <td>English</td>
+              <td>언어선택 영문 페이지 바로가기</td>
+              <td>Language selection: See website in English</td>
+            </tr>
+            <tr>
+              <td>언어선택 국문 페이지 바로가기</td>
+              <td>Language selection: See website in Korean</td>
+              <td>국문 페이지 바로가기</td>
+              <td>Go to website in Korean</td>
+            </tr>
+            <tr>
+              <td>영문 페이지 바로가기</td>
+              <td>Go to website in English</td>
+              <td>검색 확장됨</td>
+              <td>Search expanded</td>
+            </tr>
+            <tr>
+              <td>검색 축소됨</td>
+              <td>Search reduced</td>
+              <td>팝업 열기</td>
+              <td>Open popup</td>
+            </tr>
+            <tr>
+              <td>팝업 닫기</td>
+              <td>Close popup</td>
+              <td>첨부파일 다운로드</td>
+              <td>Download attachment</td>
+            </tr>
+            <tr>
+              <td>영상보기</td>
+              <td>View video</td>
+              <td>시작날짜를 년월일형식으로 숫자 8자리로 입력해 주세요</td>
+              <td>Please enter the start date in 8 digits (yyyy/mm/dd)</td>
+            </tr>
+            <tr>
+              <td>종료날짜를 년월일형식으로 숫자 8자리로 입력해 주세요</td>
+              <td>Please enter the end date in 8 digits (yyyy/mm/dd)</td>
+              <td>시작날짜를 선택해 주세요</td>
+              <td>Please select the start date</td>
+            </tr>
+            <tr>
+              <td>종료날짜를 선택해 주세요</td>
+              <td>Please select the end date</td>
+              <td>시작날짜 선택</td>
+              <td>Select start date</td>
+            </tr>
+            <tr>
+              <td>종료날짜 선택</td>
+              <td>Select end date</td>
+              <td>검색 조건 선택</td>
+              <td>Select search criteria</td>
+            </tr>
+            <tr>
+              <td>검색어 입력</td>
+              <td>Enter search term</td>
+              <td>검색어를 입력해주세요</td>
+              <td>Please enter the search term</td>
+            </tr>
+            <tr>
+              <td>검색닫기</td>
+              <td>Close search</td>
+              <td>공유 url복사</td>
+              <td>Copy URL to share</td>
+            </tr>
+            <tr>
+              <td>공유 페이스북</td>
+              <td>Share in Facebook</td>
+              <td>공유 트위터</td>
+              <td>Share in Twitter</td>
+            </tr>
+            <tr>
+              <td>공유 지메일</td>
+              <td>Share in Gmail</td>
+              <td>공유상자 열기</td>
+              <td>Open sharing frame</td>
+            </tr>
+            <tr>
+              <td>공유상자 닫기</td>
+              <td>Close sharing frame</td>
+              <td>땡땡땡 새창열림</td>
+              <td>Opens 땡땡땡 in a new window</td>
+            </tr>
+            <tr>
+              <td>컨텐츠 바로가기</td>
+              <td>Go to the content</td>
+            </tr>
+          </table>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 주석</h2>
+          <pre class="code-info"># html 구분시
+# &#60;!-- s: header -->
+#         소스내용
+# &#60;!-- e: header -->
+
+# html 수정시
+# &#60;!-- s: 20190520 수정 -->
+#         소스내용
+# &#60;!-- e: 20190520 수정 -->
+
+# css 구분시
+# /*! prototype */
+# /*! prototype - pc */
+# /*! prototype - mobile */
+# /*! layout */
+# /*! main */
+
+# css 구분시 추가 내용이 필요할때
+# /*!
+#  * prototype
+#  * 프로토타입 PC 버전
+#  */
+
+# /*!
+#  * 컨텐츠 카테고리명
+#  * 컨텐츠 설명 1
+#  * 컨텐츠 설명 2
+#  */</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 폴더 구조</h2>
+          <pre class="code-info">=== 산출물 제출용 가이드 및 프로토타입 작성 하기. 제출시에는 안내멘트들은 지워 주세요. (구성은 프로젝트에 맞춰서 구성하기) ===
+
+# /css/ - css 폴더
+# /js/ - 프론트 js 폴더
+# /fonts/ - 웹폰트 폴더
+# /html/include/ - 공통 include 파일 폴더
+# /images/ - 이미지 폴더</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] 공통 파일 설명</h2>
+          <pre class="code-info"># cl.html - 코딩리스트
+# prototype.html - 코딩 가이드</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] CSS 파일 설명</h2>
+          <pre class="code-info"># common.css - 컨텐츠 css 파일
+# main.css - 메인 css 파일
+
+=== 추가로 생성되는 css 파일 설명 필요 ===</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">[가이드] JS 파일 설명</h2>
+          <pre class="code-info"># common.js - 프론트 ui 스크립트 파일
+# jquery.js - 공통 jquery 플러그인
+
+=== 추가로 생성되는 js 파일 설명 필요 ===</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">디자인 스크롤 - 기본 inner</h2><br>
+          <style>
+            .scrollbar-inner {
+              width: 300px;
+              max-height: 150px;
+            }
+
+          </style>
+          <div class="scrollbar-inner">
+            <div class="contents-sample-test">
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</div>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">디자인 스크롤 - 기본 outer</h2><br>
+          <style>
+            .scrollbar-outer {
+              width: 300px;
+              max-height: 150px;
+            }
+
+          </style>
+          <div class="scrollbar-outer">
+            <div class="contents-sample-test">
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</div>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">디자인 스크롤 - textarea</h2><br>
+          <style>
+            .textarea-scrollbar {
+              width: 300px;
+              height: 150px;
+            }
+
+          </style>
+          <textarea class="textarea-scrollbar scrollbar-outer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+</textarea>
+          <pre class="code-info"># scrollbar-inner 클래스는 스크롤바가 텍스트의 안쪽에 위치합니다.
+# scrollbar-outer 클래스는 스크롤바가 텍스트의 바깥쪽에 위치합니다.
+# scrollbar-inner, scrollbar-outer 영역에 max-height 속성으로 스크롤 범위를 지정 합니다.
+# scrollbar-inner, scrollbar-outer 영역은 jquery.scrollbar 라이브러리에서 사용하는 클래스 입니다.
+# scrollbar-inner, scrollbar-outer 영역에는 padding 속성을 넣을 수 없습니다.
+# scrollbar-inner, scrollbar-outer 자식 엘리먼트에서 padding 속성을 조정 합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">기본 버튼 (button tag, a tag)</h2><br>
+          <button class="btn-basic blue" type="button">지원하기</button>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <a class="btn-basic blue" href="#none">지원하기</a>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <button class="btn-basic white" type="button">목록</button>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <a class="btn-basic white" href="#none">목록</a>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <button class="btn-basic white" type="button">목록<i class="ico" aria-hidden="true"></i>
+          </button>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <a class="btn-basic white" href="#none">목록<i class="ico" aria-hidden="true"></i>
+          </a>
+          <pre class="code-info"># 아이콘 영역은 빈태그이며 보이스 오버나 스크린리더에 읽히지 않도록 aria-hidden="true" 처리 해줍니다.
+# 다른페이지로 이동하는 링크 버튼과 기능 버튼을 구분해서 사용 합니다.
+# &#60;a>&#60;/a> 태그는 링크 버튼에 사용합니다.
+# &#60;button>&#60;/button> 태그는 링크 이동이 아닌 기능 버튼에 사용합니다.
+# &#60;a role="button">&#60;/a> 태그를 기능 버튼으로 사용해야 하는 경우는 aria 태그의 role="button" 속성을 넣어 줍니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input[type="checkbox"]</h2>
+          <span class="input-checkbox">
+            <input type="checkbox" id="checkbox201" name="checkbox201">
+            <label for="checkbox201">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-checkbox">
+            <input type="checkbox" id="checkbox202" name="checkbox202" checked>
+            <label for="checkbox202">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-checkbox">
+            <input type="checkbox" id="checkbox203" name="checkbox203" disabled>
+            <label for="checkbox203">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-checkbox">
+            <input type="checkbox" id="checkbox204" name="checkbox204" checked disabled>
+            <label for="checkbox204">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <pre class="code-info"># 텍스트가 없는 기본형. (라디오버튼 내용 동일)
+# 텍스트의 위치에 따라 right, left, up, down 클래스를 붙여줍니다.
+# label 태그에는 width, height 값을 지정 하면 안됩니다.
+# label 태그에는 가로 길이에 맞게 padding 을 조정합니다.
+# 체크박스 및 라디오버튼의 선택표시는 이미지를 사용하지 않고 css를 사용했습니다.
+# input 태그는 appearance를 사용하면 IE 에서는 기본 컴퍼넌트가 지워지지 않기 때문에 숨김텍스트 처리하듯이 지웠습니다.
+# 애니메이션이 필요 없을 경우는 css에서 애니메이션 영역을 지우고 label:after 를 display:none; 처리하고 checked 되면 display:block; 되게 수정하면 됩니다.
+# 신규타입을 만들때는 "input-checkbox-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 input-checkbox에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input[type="checkbox"] - 텍스트 위치 변경</h2>
+          <span class="input-checkbox right">
+            <input type="checkbox" id="checkbox211" name="checkbox211">
+            <label for="checkbox211">
+              <span class="txt">텍스트 오른쪽</span>
+            </label>
+          </span>
+          <span class="input-checkbox left">
+            <input type="checkbox" id="checkbox221" name="checkbox221">
+            <label for="checkbox221">
+              <span class="txt">텍스트 왼쪽</span>
+            </label>
+          </span>
+          <span class="input-checkbox down">
+            <input type="checkbox" id="checkbox231" name="checkbox231">
+            <label for="checkbox231">
+              <span class="txt">텍스트 아래쪽</span>
+            </label>
+          </span>
+          <span class="input-checkbox up">
+            <input type="checkbox" id="checkbox241" name="checkbox241">
+            <label for="checkbox241">
+              <span class="txt">텍스트 위쪽</span>
+            </label>
+          </span>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input[type="radio"]</h2>
+          <span class="input-radio">
+            <input type="radio" id="radio201" name="radio201">
+            <label for="radio201">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-radio">
+            <input type="radio" id="radio202" name="radio202" checked>
+            <label for="radio202">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-radio">
+            <input type="radio" id="radio203" name="radio203" disabled>
+            <label for="radio203">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+          <span class="input-radio">
+            <input type="radio" id="radio204" name="radio204" checked disabled>
+            <label for="radio204">
+              <span class="hide-txt">숨김텍스트처리</span>
+            </label>
+          </span>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input[type="radio"] - 텍스트 위치 변경</h2>
+          <span class="input-radio right">
+            <input type="radio" id="radio211" name="radio211">
+            <label for="radio211">
+              <span class="txt">텍스트 오른쪽</span>
+            </label>
+          </span>
+          <span class="input-radio left">
+            <input type="radio" id="radio221" name="radio221">
+            <label for="radio221">
+              <span class="txt">텍스트 왼쪽</span>
+            </label>
+          </span>
+          <span class="input-radio down">
+            <input type="radio" id="radio231" name="radio231">
+            <label for="radio231">
+              <span class="txt">텍스트 아래쪽</span>
+            </label>
+          </span>
+          <span class="input-radio up">
+            <input type="radio" id="radio241" name="radio241">
+            <label for="radio241">
+              <span class="txt">텍스트 위쪽</span>
+            </label>
+          </span>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input text</h2><br>
+          <span class="input-txt">
+            <input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요">
+          </span><br><br>
+          <span class="input-txt">
+            <input type="text" title="검색어 입력" placeholder="읽기 전용" readonly>
+          </span>
+          <pre class="code-info"># input text 기본형.
+# 가로 길이는 span.input-txt에 정해주면 됩니다. input 가로길이는 항상 100% 입니다.
+# 신규타입을 만들때는 "input-txt-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 input-txt에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">input date (IE 미지원)</h2><br>
+          <span class="input-date">
+            <input type="date" title="날짜 선택" value="2019-02-28">
+          </span>
+          <pre class="code-info"># input date 기본형.
+# IE는 지원하지 않기 때문에 모바일웹에서 사용하기 적당합니다.
+# 기본 컴퍼넌트는 웹접근성을 준수합니다.(인증마크 획득시 통과)
+# 커스터마이징에 제약사항이 많습니다.
+# 텍스트가 가운데정렬이 되지 않아 텍스트 오른쪽에 아이콘 이미지를 추가하는 형태를 만들어서 maring:0 auto; 등으로 달력 컴퍼넌트 전체를 가운데 정렬해서 사용해야 합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">셀렉트 박스 (IE9 부터 지원)</h2><br>
+          <span class="selectbox">
+            <select title="">
+              <option value="">선택</option>
+              <option value="">아이템1</option>
+              <option value="">아이템2</option>
+            </select>
+          </span><br><br>
+          <span class="selectbox">
+            <select title="" disabled>
+              <option value="">disabled</option>
+              <option value="">아이템1</option>
+              <option value="">아이템2</option>
+            </select>
+          </span>
+          <pre class="code-info"># selectbox 기본형.
+# IE9도 지원 합니다.
+# span.selectbox 의 가로 길이를 조정 합니다.
+# select의 가로는 항상 100% 입니다.
+# 신규타입을 만들때는 "selectbox-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 selectbox에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.
+# 셀렉트박스는 사용시 웹접근성 준수를 위하여 선택 후 "버튼"을 누를 수 있도록 퍼블리싱되어야 합니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">탭 메뉴 - 균등분할(equal)</h2><br>
+          <div class="tab-nav-container">
+            <ul class="tab-nav" role="tablist">
+              <li class="tab-item">
+                <a class="tab-link active" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">ON 20px M<br> #ffffff</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF 20px R #666666</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">탭 메뉴 - 불균등분할 (unequal)</h2><br>
+          <div class="tab-nav-container">
+            <ul class="tab-nav unequal" role="tablist">
+              <li class="tab-item">
+                <a class="tab-link active" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">ON 20px M<br> #ffffff</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF 20px R #666666</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+            </ul>
+          </div><br><br>
+          <div class="tab-nav-container scroll">
+            <ul class="tab-nav unequal" role="tablist">
+              <li class="tab-item">
+                <a class="tab-link active" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">ON 20px M<br> #ffffff</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF 20px R #666666</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+              <li class="tab-item">
+                <a class="tab-link" href="#none" role="tab">
+                  <span class="hide-txt">선택됨</span>
+                  <span class="txt">OFF</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <pre class="code-info">[탭 메뉴]
+# 태그는 기본 ul, li 이지만 필요에 따라 변경되어도 스타일은 유지 됩니다.
+# tab-item 균등 분할 입니다.
+# tab-item 불균등 분할은 tab-nav 에 unequal 클래스를 추가 해줍니다.
+# tab-item 추가 및 삭제하여 탭 메뉴의 갯수를 조절 할 수 있습니다.
+# tab-item 의 높이는 가변 입니다.
+# tab-link 에 활성화 클래스 active
+
+# 가로 스크롤 필요시 .tab-nav-container 에 scroll 클래스를 붙여줍니다.
+# 스크롤은 .tab-nav.unequal 에서만 작동 합니다.
+
+최종업데이트 - 2020. 09. 16</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+          <div class="table-wrap-type01">
+            <table class="table-col-type01">
+              <caption class="caption-prototype01-02">
+                <span class="txt01">공시자료</span>
+                <span class="txt02">:번호</span>
+                <span class="txt03">,보고서명</span>
+                <span class="txt04">,등록일</span>
+              </caption>
+              <colgroup class="colgroup-prototype01-02">
+                <col class="col01">
+                <col class="col02">
+                <col class="col03">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="txt">번호</span>
+                  </th>
+                  <th>
+                    <span class="txt">보고서명</span>
+                  </th>
+                  <th>
+                    <span class="txt">등록일</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10</td>
+                  <td class="left">기업설명회(IR)개최(안내공시)</td>
+                  <td>2019.04.05</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="left">기업설명회(IR)개최(안내공시)</td>
+                  <td>2019.04.05</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="left">기업설명회(IR)개최(안내공시)</td>
+                  <td>2019.04.05</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="left">기업설명회(IR)개최(안내공시)</td>
+                  <td>2019.04.05</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+          <div class="table-wrap-type01">
+            <table class="table-col-type01">
+              <caption class="caption-prototype01-03">
+                <span class="txt01">감사위원회 활동 내역</span>
+                <span class="txt02">:회차</span>
+                <span class="txt03">,개최일자</span>
+                <span class="txt04">,의안내용</span>
+                <span class="txt04">,가결여부</span>
+                <span class="txt04">,사외이사 출석현황</span>
+              </caption>
+              <colgroup class="colgroup-prototype01-03">
+                <col class="col01">
+                <col class="col02">
+                <col class="col03">
+                <col class="col04">
+                <col class="col05">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="txt">회차</span>
+                  </th>
+                  <th>
+                    <span class="txt">개최일자</span>
+                  </th>
+                  <th>
+                    <span class="txt">의안내용</span>
+                  </th>
+                  <th>
+                    <span class="txt">가결여부</span>
+                  </th>
+                  <th>
+                    <span class="txt">사외이사 출석현황</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">제5차</td>
+                  <td rowspan="2">2018.10.25</td>
+                  <td class="left">외부감사인 검토 진행경과 보고의 건</td>
+                  <td>-</td>
+                  <td rowspan="2">3/3</td>
+                </tr>
+                <tr>
+                  <td class="left">2018년 3분기 재무제표(案) 보고의 건</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+          <div class="table-wrap-type01">
+            <table class="table-col-type01">
+              <caption class="caption-prototype01-04">
+                <span class="txt01">사이버 신문고</span>
+                <span class="txt02">:E-mail</span>
+                <span class="txt03">,Tel</span>
+                <span class="txt04">,Fax</span>
+                <span class="txt04">,주소</span>
+                <span class="txt04">,바로가기</span>
+              </caption>
+              <colgroup class="colgroup-prototype01-04">
+                <col class="col01">
+                <col class="col02">
+                <col class="col03">
+                <col class="col04">
+                <col class="col05">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="txt">E-mail</span>
+                  </th>
+                  <th>
+                    <span class="txt">Tel</span>
+                  </th>
+                  <th>
+                    <span class="txt">Fax</span>
+                  </th>
+                  <th>
+                    <span class="txt">주소</span>
+                  </th>
+                  <th>
+                    <span class="txt">바로가기</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="middle">lethicsoffice@lgchem.com</td>
+                  <td class="middle">02-785-2020</td>
+                  <td class="middle">02-3773-7099</td>
+                  <td class="middle">
+                    <div class="txt01">서울시 영등포구 여의대로 128</div>
+                    <div class="txt01">LG트윈타워 동관 24층</div>
+                    <div class="txt01">LG화학 윤리사무국</div>
+                  </td>
+                  <td class="middle">
+                    <div class="link01">
+                      <a class="btn-link01" href="#none" title="새창열림" target="_blank">
+                        <span class="txt">사이버신문고 홈</span>
+                        <em class="ico" aria-hidden="true"></em>
+                      </a>
+                    </div>
+                    <div class="link01">
+                      <a class="btn-link01" href="#none" title="새창열림" target="_blank">
+                        <span class="txt">제보유형</span>
+                        <em class="ico" aria-hidden="true"></em>
+                      </a>
+                    </div>
+                    <div class="link01">
+                      <a class="btn-link01" href="#none" title="새창열림" target="_blank">
+                        <span class="txt">제보대상</span>
+                        <em class="ico" aria-hidden="true"></em>
+                      </a>
+                    </div>
+                    <div class="link01">
+                      <a class="btn-link01" href="#none" title="새창열림" target="_blank">
+                        <span class="txt">제보자 보호항목</span>
+                        <em class="ico" aria-hidden="true"></em>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">테이블 (col 타입 2)</h2>
+          <div class="table-wrap-type02">
+            <table class="table-col-type02">
+              <caption class="caption-prototype02-01">
+                <span class="txt01">전자공고</span>
+                <span class="txt02">:번호</span>
+                <span class="txt03">,공고명</span>
+                <span class="txt04">,다운로드</span>
+              </caption>
+              <colgroup class="colgroup-prototype02-01">
+                <col class="col01">
+                <col class="col02">
+                <col class="col03">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="txt">번호</span>
+                  </th>
+                  <th>
+                    <span class="txt">공고명</span>
+                  </th>
+                  <th>
+                    <span class="txt">다운로드</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">
+                      <span class="line-clamp">a 태그 있을때 - 2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="btn-download-dark" href="#none" role="button">
+                      <span class="hide-txt">자료 다운로드</span>
+                      <em class="ico" aria-hidden="true"></em>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="left">
+                    <div class="line-clamp">a 태그 없을때 - 2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고</div>
+                  </td>
+                  <td>
+                    <a class="btn-download-dark" href="#none" role="button">
+                      <span class="hide-txt">자료 다운로드</span>
+                      <em class="ico" aria-hidden="true"></em>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">2018년 제18기 결산공고</a>
+                  </td>
+                  <td>
+                    <a class="btn-download-dark" href="#none" role="button">
+                      <span class="hide-txt">자료 다운로드</span>
+                      <em class="ico" aria-hidden="true"></em>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">2018년 제18기 결산공고</a>
+                  </td>
+                  <td>
+                    <a class="btn-download-dark" href="#none" role="button">
+                      <span class="hide-txt">자료 다운로드</span>
+                      <em class="ico" aria-hidden="true"></em>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">테이블 (col 타입 2)</h2>
+          <div class="table-wrap-type02">
+            <table class="table-col-type02">
+              <caption class="caption-prototype02-02">
+                <span class="txt01">공시자료</span>
+                <span class="txt02">:번호</span>
+                <span class="txt03">,보고서명</span>
+                <span class="txt04">,등록일</span>
+              </caption>
+              <colgroup class="colgroup-prototype02-02">
+                <col class="col01">
+                <col class="col02">
+                <col class="col03">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="txt">번호</span>
+                  </th>
+                  <th>
+                    <span class="txt">보고서명</span>
+                  </th>
+                  <th>
+                    <span class="txt">등록일</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">
+                      <span class="line-clamp">a 태그 있을때 - 2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고</span>
+                    </a>
+                  </td>
+                  <td>2019.03.25</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="left">
+                    <div class="line-clamp">a 태그 없을때 - 2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고2018년 제18기 결산공고</div>
+                  </td>
+                  <td>2019.03.25</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">2018년 제18기 결산공고</a>
+                  </td>
+                  <td>2019.03.25</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="left">
+                    <a class="txt-link" href="#none">2018년 제18기 결산공고</a>
+                  </td>
+                  <td>2019.03.25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">페이지 네비게이션</h2><br>
+          <div class="paginav">
+            <a class="paging-util btn-paging-prev" href="#none">
+              <span class="hide-txt">이전 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+            <div class="paging-list">
+              <span class="paging-num on">
+                <span class="txt">1</span>
+              </span>
+              <a class="paging-num" href="#none">
+                <span class="txt">2</span>
+              </a>
+              <a class="paging-num" href="#none">
+                <span class="txt">3</span>
+              </a>
+              <a class="paging-num" href="#none">
+                <span class="txt">4</span>
+              </a>
+              <a class="paging-num" href="#none">
+                <span class="txt">5</span>
+              </a>
+            </div>
+            <a class="paging-util btn-paging-next" href="#none">
+              <span class="hide-txt">다음 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+          </div>
+          <pre class="code-info"># 페이지네비게이션 기본형.
+# 빈 태그에는 aria-hidden="true" 라고 처리해야 스크린 리더나 보이스오버, 토크백등에서 읽지 않습니다.
+# 신규타입을 만들때는 "paginav-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 paginav에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">페이지 네비게이션 모바일</h2><br>
+          <div class="paginav type-mo">
+            <a class="paging-util btn-paging-first" href="#none">
+              <span class="hide-txt">첫 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+            <a class="paging-util btn-paging-prev" href="#none">
+              <span class="hide-txt">이전 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+            <div class="paging-list">
+              <span class="paging-num on">
+                <span class="txt">1</span>
+              </span>
+              <span class="paging-num">/</span>
+              <span class="paging-num">
+                <span class="txt">5</span>
+              </span>
+            </div>
+            <a class="paging-util btn-paging-next" href="#none">
+              <span class="hide-txt">다음 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+            <a class="paging-util btn-paging-last" href="#none">
+              <span class="hide-txt">마지막 페이지</span>
+              <em class="icon" aria-hidden="true"></em>
+            </a>
+          </div>
+          <pre class="code-info"># 페이지네비게이션 기본형.
+# 빈 태그에는 aria-hidden="true" 라고 처리해야 스크린 리더나 보이스오버, 토크백등에서 읽지 않습니다.
+# 신규타입을 만들때는 "paginav-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 paginav에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.</pre>
+          <pre></pre>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">breadcrumb (사이트 이동 경로)</h2><br>
+          <div class="location-wrp">
+            <a href="#">depth1</a>
+            <a href="#">depth2</a>
+            <a href="#">depth3</a>
+            <a href="#">depth4</a>
+          </div><br>
+          <div class="location-wrp2">
+            <ul class="clfix ui-location" id="id01">
+              <li>
+                <a href="#" role="button">depth1</a>
+                <ul>
+                  <li>
+                    <a href="#">링크1</a>
+                  </li>
+                  <li>
+                    <a href="#">링크2</a>
+                  </li>
+                  <li>
+                    <a href="#">링크3</a>
+                  </li>
+                  <li>
+                    <a href="#">링크4</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" role="button">depth2</a>
+                <ul>
+                  <li>
+                    <a href="#">링크1</a>
+                  </li>
+                  <li>
+                    <a href="#">링크2</a>
+                  </li>
+                  <li>
+                    <a href="#">링크3</a>
+                  </li>
+                  <li>
+                    <a href="#">링크4</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" role="button">depth3</a>
+                <ul>
+                  <li>
+                    <a href="#">링크1</a>
+                  </li>
+                  <li>
+                    <a href="#">링크2</a>
+                  </li>
+                  <li>
+                    <a href="#">링크3</a>
+                  </li>
+                  <li>
+                    <a href="#">링크4</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" role="button">depth4</a>
+                <ul>
+                  <li>
+                    <a href="#">링크1</a>
+                  </li>
+                  <li>
+                    <a href="#">링크2</a>
+                  </li>
+                  <li>
+                    <a href="#">링크3</a>
+                  </li>
+                  <li>
+                    <a href="#">링크4</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">지도 - 네이버</h2>
+          <!-- 네이버-->
+          <div class="map-api" id="map01"></div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">지도 - 카카오</h2>
+          <!-- 카카오-->
+          <div class="map-api" id="map02"></div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">지도 - 구글</h2>
+          <!-- 구글-->
+          <div class="map-api" id="map03"></div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - youtube iframe</h2>
+          <!-- youtube iframe-->
+          <div class="movie-area">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?"></iframe>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - youtube object</h2>
+          <!-- youtube object-->
+          <div class="movie-area">
+            <object data="https://www.youtube.com/embed/tgbNymZ7vqY"></object>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - youtube embed</h2>
+          <!-- youtube embed-->
+          <div class="movie-area">
+            <embed src="https://www.youtube.com/embed/tgbNymZ7vqY">
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - vimeo iframe</h2>
+          <!-- vimeo iframe-->
+          <div class="movie-area">
+            <iframe src="https://player.vimeo.com/video/3873878?control=0&amp;background=1&amp;autoplay=0&amp;loop=1&amp;autopause=0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - vimeo embed</h2>
+          <!-- vimeo embed-->
+          <div class="movie-area">
+            <embed src="https://player.vimeo.com/video/3873878?control=0&amp;background=1&amp;autoplay=0&amp;loop=1&amp;autopause=0" allowfullscreen>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">영상 - video</h2><br>
+          <!-- video-->
+          <div class="movie-area">
+            <video controls>
+              <source src="movie.mp4" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+            </video>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">팝업</h2><br>
+          <a class="bttn type01 style02 open-pop" href="#none" role="button">
+            <span class="txt01">팝업열기</span>
+            <em class="ico01" aria-hidden="true"></em>
+          </a>
+          <!-- 팝업-->
+          <div class="pop-wrp" id="popId01">
+            <div class="pop_fix full">
+              <div class="pop-cont">팝업내용<a class="pop-close" href="#">x</a>
+              </div>
+            </div>
+            <div class="pop-dimm"></div>
+          </div>
+        </div>
+        <div class="prototype-group">
+          <h2 class="prototype-tit01">크로스 브라우징 테스트 - a태그, button태그 렌더링 맞추기</h2><br>
+          <a class="a-test" href="#" style="border:1px solid red;">a 태그와 button 태그 랜더링 맞추기</a>
+          <button class="a-test" type="button" style="border:1px solid red;">a 태그와 button 태그 랜더링 맞추기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script></script>
+  <!-- naver map-->
+  <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=83bfuniegk&amp;submodules=panorama,geocoder,drawing,visualization"></script>
+  <!-- kakao map-->
+  <script src="https://dapi.kakao.com/v2/maps/sdk에.js?appkey=9d976ff44126100f084df22f1922ebf5"></script>
+  <script>
+    // naver map
+    var mapOptions = {
+      center: new naver.maps.LatLng(37.3595704, 127.105399),
+      zoom: 15
+    };
+    var map = new naver.maps.Map('map01', mapOptions);
+
+
+    // daum map
+    var container = document.getElementById('map02');
+    var options = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3
+    };
+    var map = new kakao.maps.Map(container, options);
+
+
+    // google map
+    var mapGoogle;
+
+    function initMap() {
+      mapGoogle = new google.maps.Map(document.getElementById('map03'), {
+        center: {
+          lat: -34.397,
+          lng: 150.644
+        },
+        zoom: 8
+      });
+    }
+
+  </script>
+  <!-- google map-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=&amp;callback=initMap"></script>
+</body>
+
+</html>
