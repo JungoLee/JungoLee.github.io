@@ -749,7 +749,7 @@ function init() {
                         if(progress !== frame01 + frame02)
                             sequenceETB.updateImage(progress);
 
-                        $('.header-in ul li').eq(0).text(progress);
+                        $('.header-in ul li').eq(0).find('a').text(progress);
                     },
                     onEnter: function () {
                         sequenceETB.headerToggle(true);
@@ -881,7 +881,7 @@ function init() {
                         clearInterval(intervalId);
                         var progress = Math.floor(frame01 + frame02 + (a.progress * frame03));
                         sequenceETB.updateImage(progress);
-                        $('.header-in ul li').eq(1).text(progress);
+                        $('.header-in ul li').eq(1).find('a').text(progress);
                     },
                 });
 
