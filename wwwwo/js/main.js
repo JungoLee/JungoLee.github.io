@@ -739,9 +739,9 @@ function init() {
 
                 ScrollTrigger.create({
                     trigger: ".ui-frame-scene01",
-                    start: "top+=10px top",
+                    start: "top top",
                     end: "bottom top",
-                    markers: true,
+                    // markers: true,
                     onUpdate: function (a) {
                         clearInterval(intervalId);
                         var progress = Math.floor(frame01 + (a.progress * frame02));
@@ -749,7 +749,7 @@ function init() {
                         if(progress !== frame01 + frame02)
                             sequenceETB.updateImage(progress);
 
-
+                        $('.header-in ul li').eq(0).text(progress);
                     },
                     onEnter: function () {
                         sequenceETB.headerToggle(true);
@@ -880,7 +880,8 @@ function init() {
                     onUpdate: function (a) {
                         clearInterval(intervalId);
                         var progress = Math.floor(frame01 + frame02 + (a.progress * frame03));
-                        sequenceETB.updateImage(progress)
+                        sequenceETB.updateImage(progress);
+                        $('.header-in ul li').eq(1).text(progress);
                     },
                 });
 
