@@ -25,14 +25,21 @@
 
 html,
 body {
-  position: relative;
+  position: fixed;
   background-color: #fff;
   overflow: hidden; }
 
 html,
 body.sequenceReady {
   overflow-x: hidden;
-  overflow-y: auto; }
+  overflow-y:auto;
+
+  }
+  #wrap{
+    overflow-y:auto;
+    height:100vh;
+  }
+
 
 body {
   width: 100%; }
