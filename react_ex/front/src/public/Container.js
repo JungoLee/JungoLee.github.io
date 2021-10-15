@@ -1,10 +1,10 @@
 import React,{ Component } from 'react';
-import classes from './pb.module.scss';
+import cls from './pb.module.scss';
 
 class Container extends Component {
     render(){
         return(
-            <div className={classes.container}>
+            <div className={cls.container}>
 
             </div>
         );

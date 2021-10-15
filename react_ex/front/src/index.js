@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/reset.scss';
-import Container from './public/Container';
-import Header from './public/Header';
+import App from './public/App';
 
-
-ReactDOM.render(<Header />,document.getElementById('header'));
-ReactDOM.render(<Container />,document.getElementById('root'));
+ReactDOM.render(<App />,document.getElementById('docRootContainer'));
 // ReactDOM.render(<Footer />,document.getElementById('footer'));
 
