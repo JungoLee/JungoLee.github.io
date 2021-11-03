@@ -8,18 +8,21 @@ class App extends Component {
         super(props);
         this.state = {
             page:"Main",
+            date: new Date().toString(),
         }
     }
 
     render(){
         return(
+
             <div class="wrap">
-                <Header onChangePage={function(_page){
+                <Header page={this.state.page} onChangePage={function(obj){
                     this.setState({
-                        page:_page
+                        page:obj._page == undefined ? this.state.page : obj._page,
+                        date:obj._date == undefined ? this.state.date : obj._date,
                     });
                 }.bind(this)}></Header>
-                <Container page={this.state.page}></Container>
+                <Container page={this.state.page} date={this.state.date}></Container>
             </div>
         );
     }
