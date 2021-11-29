@@ -9,6 +9,7 @@ const components = {
     Portfolio:Portfolio,
     Gallery:Gallery,
 }
+
 class Container extends Component {
 
     render(){
@@ -17,10 +18,46 @@ class Container extends Component {
             <div className={cls.container}>
                 Container
                 <SpecialComp></SpecialComp>
-                <p>{this.props.date}</p>
+                <Counter></Counter>
             </div>
         );
     }
 }
+
+class Counter extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            count: new Date().toLocaleTimeString("ko-KR"),
+            delay: 1000,
+        }
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(this.tick, this.state.delay);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.delay !== this.state.delay) {
+        clearInterval(this.interval);
+        this.interval = setInterval(this.tick, this.state.delay);
+        }
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+    tick = () => {
+        this.setState({
+            count: new Date().toLocaleTimeString("ko-KR")
+        });
+    }
+
+    render() {
+        return (
+        <div>
+            <h1>{this.state.count}</h1>
+        </div>
+        );
+    }
+    }
 
 export default Container;

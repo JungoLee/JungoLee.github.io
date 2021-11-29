@@ -6,9 +6,11 @@ class Nav extends Component {
         super(props);
         this.state = {
             lists:[
-                    {text:"Portfolio",page:"Portfolio"},
                     {text:"소개",page:"Main"},
+                    {text:"Portfolio",page:"Portfolio"},
                     {text:"갤러리",page:"Gallery",class:"Gallery"},
+                    {text:"타로",page:"tarot",class:""},
+                    {text:"HappyTree",page:"happytree",class:""},
                 ],
         }
     }
@@ -34,7 +36,7 @@ class Nav extends Component {
         return(
             <ul className={cls.nav_wrapper}>
                 {listsMap}
-                <li key="dateGet" class={cls.first_depth}>
+                {/* <li key="dateGet" class={cls.first_depth}>
                     <a
                         href="#"
                         onClick={function(e){
@@ -44,14 +46,13 @@ class Nav extends Component {
                         }.bind(this)}
                         className={cls.depth_link + " " }>날짜변경
                     </a>
-                </li>
+                </li> */}
             </ul>
         );
     }
 }
 
 class Header extends Component {
-
     render(){
         return(
             <div className={cls.header}>
@@ -60,7 +61,7 @@ class Header extends Component {
                     <a href="/" className={cls.home_link}>Jungo</a>
                 </h1>
 
-                <Nav page={this.props.page} onChangePage={function(obj){
+                <Nav onChangePage={function(obj){
                     this.props.onChangePage(obj);
                 }.bind(this)}></Nav>
             </div>

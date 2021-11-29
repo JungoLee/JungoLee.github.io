@@ -1,6 +1,7 @@
 @import '../css/_setting';
 
 $headerSpace : 80px;
+
 .header{
     width:100%;
     @include rem(height, $headerSpace);

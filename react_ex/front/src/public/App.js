@@ -13,6 +13,7 @@ class App extends Component {
     }
 
     render(){
+
         return(
 
             <div class="wrap">
@@ -22,6 +23,7 @@ class App extends Component {
                         date:obj._date == undefined ? this.state.date : obj._date,
                     });
                 }.bind(this)}></Header>
+
                 <Container page={this.state.page} date={this.state.date}></Container>
             </div>
         );

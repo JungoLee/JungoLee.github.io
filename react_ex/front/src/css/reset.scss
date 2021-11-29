@@ -3,6 +3,46 @@
 // 추가 인클루드는 _setting 안에다가 하기 여기 인클루드는 _setting 하나만 나와있게 관리하기
 @import './_setting';
 
+@font-face {
+    font-family: "Gotham-Book";
+    src: local(☺), url("../font/Gotham-Book.woff2") format("truetype"), url("../font/Gotham-Book.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "Gotham-Bold";
+    src: local(☺), url("../font/Gotham-Bold.woff2") format("truetype"), url("../font/Gotham-Bold.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "Gotham-Medium";
+    src: local(☺), url("../font/Gotham-Medium.woff2") format("truetype"), url("../font/Gotham-Medium.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "Gotham-Light";
+    src: local(☺), url("../font/Gotham-Light.woff2") format("truetype"), url("../font/Gotham-Light.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-Black";
+    src: local(☺), url("../font/NotoSansKR-Black.woff2") format("truetype"), url("../font/NotoSansKR-Black.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-Bold";
+    src: local(☺), url("../font/NotoSansKR-Bold.woff2") format("truetype"), url("../font/NotoSansKR-Bold.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-Medium";
+    src: local(☺), url("../font/NotoSansKR-Medium.woff2") format("truetype"), url("../font/NotoSansKR-Medium.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-DemiLight";
+    src: local(☺), url("../font/NotoSansKR-DemiLight.woff2") format("truetype"), url("../font/NotoSansKR-DemiLight.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-Regular";
+    src: local(☺), url("../font/NotoSansKR-Regular.woff2") format("truetype"), url("../font/NotoSansKR-Regular.woff") format("truetype"); }
+
+  @font-face {
+    font-family: "NotoSansKR-Thin";
+    src: local(☺), url("../font/NotoSansKR-Thin.woff2") format("truetype"), url("../font/NotoSansKR-Thin.woff") format("truetype"); }
+
 /*! reset */
 *,
 *::before,
