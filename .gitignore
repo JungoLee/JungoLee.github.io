@@ -3,7 +3,7 @@ node_modules
 .sublime-gulp.cache
 
 www/
-build/
+
 
 _sass_map/
 sass_maps/
