@@ -1,0 +1,33 @@
+[class*="icon"]{
+    display:inline-block;
+    background-position:center;
+    background-repeat:no-repeat
+}
+.icon-star{
+    width:30px;
+    height:30px;
+    background-image:url(../images/star.png);
+    background-size:30px 30px;
+    color:#fff;
+}
+.icon-star.big{
+    width:45px;
+    height:45px;
+    background-image:url(../images/star.png);
+    background-size:45px 45px;
+    color:#fff;
+}
+.icon-glove{
+    width:150px;
+    height:150px;
+    background-image:url(../images/glove.png);
+    background-size:150px 150px;
+    color:#fff;
+    position:relative;
+}
+.icon-glove.left{
+    transform:rotateZ(45deg) ;
+}
+.icon-glove.right{
+    transform:rotateZ(-45deg) rotateY(180deg);
+}
