@@ -16,6 +16,14 @@ const gloveJS = {
         })
         document.querySelector('.ui-close-btn').addEventListener("click",function(){
             scope.closeInfoModal();
+        });
+        document.addEventListener("scroll",function(){
+            console.log(document.querySelector(".menu-head").offsetTop)
+            if(document.querySelector(".menu-head").offsetTop == 0){
+                document.querySelector(".menu-head").classList.add("on")
+            }else{
+                document.querySelector(".menu-head").classList.remove("on")
+            }
         })
     },
     mainBannerPlay(){
