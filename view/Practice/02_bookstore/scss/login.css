@@ -1,0 +1,193 @@
+.login_wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/cloud.png);
+  background-size: cover;
+}
+.login_wrap > .black_blind {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.login_wrap > .login_box {
+  position: relative;
+  z-index: 5;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 70px;
+  overflow: hidden;
+  transition: width 0.2s;
+}
+.login_wrap > .login_box h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.login_wrap > .login_box h2 > a {
+  color: #ffffff;
+  transition: color 0.2s;
+}
+.login_wrap > .login_box h2 > a:hover {
+  color: #cccccc;
+}
+.login_wrap > .login_box .double_box {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  background: #ffffff;
+  margin-top: 50px;
+}
+.login_wrap > .login_box .double_box form {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+.login_wrap > .login_box .double_box form > p {
+  font-size: 14px;
+  padding: 15px;
+}
+.login_wrap > .login_box .double_box form > input {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-top: 5px;
+  width: 100%;
+}
+.login_wrap > .login_box .double_box form > input.mb_15 {
+  margin-bottom: 15px;
+}
+.login_wrap > .login_box .double_box form > .keep_id {
+  height: auto;
+  text-align: left;
+  float: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+.login_wrap > .login_box .double_box form > .forgot_id {
+  float: right;
+  font-size: 13px;
+  color: #69cdfb;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.login_wrap > .login_box .double_box form > .forgot_id:hover {
+  color: #4c95b8;
+}
+.login_wrap > .login_box .double_box form .for_border {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 10px;
+}
+.login_wrap > .login_box .double_box form .for_border > a {
+  display: block;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  background: #595959;
+  margin-top: 9px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  transition: filter 0.2s;
+  -ms-box-shadow: 2px 5px 2px #999999;
+  -o-box-shadow: 2px 5px 2px #999999;
+  box-shadow: 2px 5px 2px #999999;
+}
+.login_wrap > .login_box .double_box form .for_border > a.facebook {
+  background: #3e5b99;
+}
+.login_wrap > .login_box .double_box form .for_border > a.google {
+  background: #ff2829;
+}
+.login_wrap > .login_box .double_box form .for_border > a.naver {
+  background: #00bd39;
+}
+.login_wrap > .login_box .double_box form .for_border > a.twitter {
+  background: #2aa9e0;
+}
+.login_wrap > .login_box .double_box form .for_border > a:hover {
+  filter: brightness(80%);
+}
+.login_wrap > .login_box .double_box form .for_border > a:active {
+  -ms-box-shadow: 0px 0px 0px #595959;
+  -o-box-shadow: 0px 0px 0px #595959;
+  box-shadow: 0px 0px 0px #595959;
+  position: relative;
+  top: 5px;
+}
+.login_wrap > .login_box .double_box form > .enter_login {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #4dfd91;
+  float: left;
+  padding: 10px;
+  margin-top: 9px;
+  -ms-box-shadow: 2px 5px 2px #999999;
+  -o-box-shadow: 2px 5px 2px #999999;
+  box-shadow: 2px 5px 2px #999999;
+  transition: background 0.2s;
+}
+.login_wrap > .login_box .double_box form > .enter_login:hover {
+  background: #1e8f49;
+}
+.login_wrap > .login_box .double_box form > .enter_login > button {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+.login_wrap > .login_box .double_box form > .enter_login:active {
+  -ms-box-shadow: 0px 0px 0px #595959;
+  -o-box-shadow: 0px 0px 0px #595959;
+  box-shadow: 0px 0px 0px #595959;
+  position: relative;
+  top: 5px;
+}
+.login_wrap > .login_box .double_box form > .sign_up {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.login_wrap > .login_box .double_box form > .sign_up > a {
+  color: #4c95b8;
+}
+.login_wrap > .login_box .double_box form > .sign_up > a:hover {
+  color: #4c95b8;
+}
+.login_wrap > .login_box.on {
+  width: 500px;
+}
+
+@media screen and (max-width: 767px) {
+  .login_wrap .login_box {
+    margin-top: 5px;
+  }
+  .login_wrap .login_box .double_box {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    background: #ffffff;
+    margin-top: 5px;
+  }
+  .login_wrap .login_box .double_box form {
+    width: 300px;
+    padding: 9px;
+    text-align: center;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    float: left;
+  }
+}/*# sourceMappingURL=login.css.map */

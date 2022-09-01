@@ -210,6 +210,8 @@
   background-color: #fff;
   height: auto;
   border-radius: 7px;
+  transform: scale(0.9);
+  opacity: 0;
 }
 .popup-cocktail-explain .cocktail-name {
   font-size: 30px;
