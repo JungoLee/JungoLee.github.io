@@ -150,8 +150,9 @@ $NotoB : "NotoSans-Bold";
         position:sticky;
         top:0;
         z-index:3;
+        transition:box-shadow .2s ease-out;
         &.on{
-            box-shadow:0 0 3px 3px rgba(0,0,0,0.4);
+            box-shadow:0 0 10px 10px rgba(0,0,0,0.2);
         }
     }
     .cocktail-title{
@@ -172,7 +173,7 @@ $NotoB : "NotoSans-Bold";
 
         }
         .title-text{
-            padding:10px 40px;
+            padding:15px 40px;
             position:relative;
             display:inline-block;
             &::before,&::after{
@@ -273,7 +274,7 @@ $NotoB : "NotoSans-Bold";
     }
     .cocktail-body{
         padding:20px 15px 20px;
-        height:calc(100vh - 400px);
+        height:calc(100vh - 200px);
         display:flex;
         .img-box{
             height:100%;

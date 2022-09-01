@@ -17,9 +17,9 @@ const gloveJS = {
         document.querySelector('.ui-close-btn').addEventListener("click",function(){
             scope.closeInfoModal();
         });
+        let firstOffsetTop = document.querySelector(".menu-head").offsetTop;
         document.addEventListener("scroll",function(){
-            console.log(document.querySelector(".menu-head").offsetTop)
-            if(document.querySelector(".menu-head").offsetTop == 0){
+            if(document.querySelector(".menu-head").offsetTop > firstOffsetTop){
                 document.querySelector(".menu-head").classList.add("on")
             }else{
                 document.querySelector(".menu-head").classList.remove("on")
@@ -54,6 +54,7 @@ const gloveJS = {
     mainBannerClose(){
         let menuSwiper = new Swiper('.menu-swiper-container',{
             spaceBetween:20,
+            autoHeight:true
         })
         gsap.to(".main-entry-banner",1,{
             scale:1.1,
