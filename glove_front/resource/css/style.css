@@ -9,7 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  z-index: 2;
+  z-index: 10;
 }
 .main-entry-banner .dimm {
   position: absolute;
@@ -116,9 +116,17 @@
   font-size: 40px;
 }
 
+.menu-wrapper {
+  padding-top: 200px;
+}
 .menu-wrapper .logo {
-  height: 200px;
-  position: relative;
+  padding: 0 50px;
+  position: fixed;
+  min-height: 200px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 .menu-wrapper .logo img {
   max-height: calc(100% - 20px);
@@ -129,12 +137,25 @@
 }
 .menu-wrapper .menu-head {
   text-align: center;
+  background-color: #fff;
 }
 .menu-wrapper .cocktail-title {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   font-family: "NotoSans-Bold";
+  z-index: 2;
+  background-color: #fff;
+}
+.menu-wrapper .cocktail-title::before {
+  content: "";
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(125, 185, 232, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#007db9e8",GradientType=0 );
 }
 .menu-wrapper .cocktail-title .title-text {
   padding: 10px 40px;
@@ -182,6 +203,9 @@
   overflow: hidden;
   width: 100%;
   height: auto;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
 }
 .menu-wrapper .menu-swiper-container {
   border-top: 1px dashed #999;
