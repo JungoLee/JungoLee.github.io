@@ -159,9 +159,10 @@ var parse = function (data) {
         value;
 
     //cols의 label이 빈 값이므로 row의 첫번째 행을 column으로 지정
-    console.log(data)
+    console.log(data.table.rows)
     for (var column_idx in data.table.cols) {
-        columns.push(data.table.rows[0]['c'][column_idx].c);
+        console.log(data.table.rows[0]['c'][column_idx])
+        columns.push(data.table.rows[0]['c'][column_idx].v);
     }
     //row 데이터 불러오기
     for (var rows_idx in data.table.rows) {
