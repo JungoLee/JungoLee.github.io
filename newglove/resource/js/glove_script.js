@@ -39,17 +39,19 @@ const gloveJS = {
             alpha: 1,
         }).to('.text-area .text', 1, {
             stagger: {
-                each: .1,
+                each: .05,
             },
             x: 0,
-            y: 0,
             alpha: 1,
             ease: Power2.easeOut,
         }, "-=.5").to('.icon-glove.left,.icon-glove.right', .75, {
             left: 0,
             alpha: 1,
             ease: Back.easeOut.config(1.5),
-        }, );
+        },"-=.8" ).to('.ui-go-menu', .5, {
+            alpha: 1,
+            scale: 1,
+        });
     },
     mainBannerClose() {
         let menuSwiper = new Swiper('.menu-swiper-container', {
@@ -65,6 +67,16 @@ const gloveJS = {
                     display: "none",
                 })
             }
+        })
+        gsap.to(".menu-wrapper", .5, {
+            alpha: 1,
+            delay: .2,
+        });
+        var titleText =document.querySelector('.title-text');
+        menuSwiper.on('transitionEnd',function(e){
+            console.log(e.$el[0].querySelector('.swiper-slide-active'))
+            console.log(e.$el[0].querySelector('.swiper-slide-active').getAttribute('category'))
+            titleText.innerHTML = e.$el[0].querySelector('.swiper-slide-active').getAttribute('category')
         })
     },
     openInfoModal() {
@@ -101,30 +113,7 @@ const gloveJS = {
     },
 }
 
-window.onload = function () {
-    gloveJS.init();
-}
 
-
-const getMemberLists = async () => {
-    const response = await fetch('member.json');
-    if (response.status === 200) {
-        const results = await response.json();
-        // console.log(results)
-        const seatingList = document.querySelector('#seatingList');
-        results.forEach(element => {
-            const liEl = document.createElement('li');
-            liEl.className = element.type + ' ' + element.number;
-            liEl.innerHTML = `<input type="text" value="${element.name}" />`;
-            seatingList.appendChild(liEl);
-        });
-        // return results;
-    } else {
-        throw new Error('Unable to get your location')
-    }
-
-}
-// getMemberLists();
 
 /* 구글 스프레드시트 스크립트 시작 */
 var jsonp = function (url) {
@@ -154,25 +143,36 @@ var parse = function (data) {
         return false;
     }
     var columns = [],
-        result = [],
+        eachArray = [],
+        typeArray = [],
+        resultArray = [],
         row_length,
-        value;
-
+        value,
+        newType = "",
+        beforeType = "";
+        console.log(data)
     //cols의 label이 빈 값이므로 row의 첫번째 행을 column으로 지정
-    console.log(data.table.rows)
     for (var column_idx in data.table.cols) {
-        console.log(data.table.rows[0]['c'][column_idx])
-        columns.push(data.table.rows[0]['c'][column_idx].v);
+        columns.push(data.table.cols[column_idx]['label']);
     }
     //row 데이터 불러오기
     for (var rows_idx in data.table.rows) {
         row_length = data.table.rows[rows_idx]['c'].length;
+        if(rows_idx == 0){
+            newType = data.table.rows[rows_idx].c[0].v
+            beforeType = data.table.rows[rows_idx].c[0].v
+        }
+
         if (column_length != row_length) {
             return false;
         }
+
         for (var row_idx in data.table.rows[rows_idx]['c']) {
-            if (!result[rows_idx]) {
-                result[rows_idx] = {};
+            if (newType !== beforeType) {
+
+            }
+            if (!eachArray[rows_idx]) {
+                eachArray[rows_idx] = {};
             }
 
             if (data.table.rows[rows_idx]['c'][row_idx] != null && data.table.rows[rows_idx]['c'][row_idx].v) {
@@ -181,10 +181,25 @@ var parse = function (data) {
                 value = "";
             }
 
-            result[rows_idx][columns[row_idx]] = value;
+            eachArray[rows_idx][columns[row_idx]] = value;
+
         }
+        beforeType = data.table.rows[rows_idx].c[0].v
+
+        if(newType !== beforeType || rows_idx == data.table.rows.length-1){
+            newType = beforeType
+            if(rows_idx == data.table.rows.length-1){
+                typeArray.push(eachArray[rows_idx])
+            }
+
+            resultArray.push(typeArray)
+            typeArray = [];
+        }
+        typeArray.push(eachArray[rows_idx])
+
+
     }
-    return result;
+    return resultArray;
 };
 
 var query = function (sql, callback) {
@@ -204,16 +219,51 @@ var query = function (sql, callback) {
 
 var my_callback = function (data) {
     data = parse(data); // 데이터 parse
-    console.log(data)
+    var totalItemSize = 0,
+        beforePage = "",
+        beforeCategory = "COCK TAIL";
+    var swiperHtml = document.createElement("div"),
+        baseGroupHtml;
+        swiperHtml.setAttribute("class","swiper-slide")
+        swiperHtml.innerHTML = `<div class="menu-flex-box column-type"></div>`;
 
-    data.forEach((element, index) => {
-        if (index == 0) return;
-        const liEl = document.createElement('li');
-        liEl.className = element.type + ' ' + element.number;
-        liEl.innerHTML = element.name;
-        // liEl.innerHTML = `<input type="text" value="${element.name}" />`;
-        seatingList.appendChild(liEl);
+    data.forEach((typeArray, _idx) => {
+
+        if(typeArray[0].nextPage == "next"){
+            swiperHtml = "";
+            swiperHtml = document.createElement("div");
+            swiperHtml.setAttribute("class","swiper-slide")
+            swiperHtml.innerHTML = `<div class="menu-flex-box column-type"></div>`;
+            beforePage = "";
+        }
+
+        typeArray.forEach((each,_eachIdx)=>{
+            if (_eachIdx == 0) {
+                baseGroupHtml = document.createElement("div");
+
+                baseGroupHtml.setAttribute("class","base-group-wrapper "+each.type+"")
+
+                baseGroupHtml.innerHTML = `<div class="box-head"><span class="base-title">${each.type}</span></div><div class="box-body"></div>`;
+                swiperHtml.querySelector(".menu-flex-box").appendChild(baseGroupHtml);
+            }
+            console.log(each.image)
+            var item = `<a href="#none" class="cocktail-item ui-open-info-modal"> <div class="cocktail-name"> <span class="txt">${each.menuName}</span> <span class="ingredients">${each.ingredient}</span> </div> <div class="cociktail-price">${each.price}.</div>    </a>`;
+            var itemHtml = document.createElement("div");
+            itemHtml.setAttribute('class','cocktail-item-list')
+            itemHtml.innerHTML = item;
+            baseGroupHtml.querySelector(".box-body").appendChild(itemHtml)
+            totalItemSize++;
+
+            beforeCategory = each.mainCategory;
+        });
+
+        swiperHtml.setAttribute("category", beforeCategory)
+        createMenu.appendChild(swiperHtml)
+
+
+
     });
+
     //불러온 데이터 조작
     for (var i = 0; i < datas.length; i++) {
         if (JSON.stringify(datas[i]) == JSON.stringify(data)) {
@@ -231,8 +281,12 @@ var my_callback = function (data) {
             }
         }
     }
-
+    gloveJS.init();
 }
 var datas = [];
-query('select *', 'my_callback');
+
+window.onload = function () {
+    query('select *', 'my_callback');
+}
+
 /* 구글 스프레드시트 스크립트 끝 */
