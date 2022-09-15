@@ -10,8 +10,20 @@ const gloveJS = {
             scope.mainBannerClose();
         })
         document.querySelectorAll('.ui-open-info-modal').forEach(function ($el) {
+
             $el.addEventListener("click", function () {
+                var imgUrl = $el.parentElement['image'];
+                var ingredient = $el.parentElement['ingredient'];
                 scope.openInfoModal();
+
+                if(imgUrl !== undefined){
+                    document.querySelector('.popup-cocktail-explain-wrapper img').setAttribute('src', imgUrl)
+                    document.querySelector('.popup-cocktail-explain-wrapper .cocktail-info-box').innerHTML = ingredient
+                }else{
+                    document.querySelector('.popup-cocktail-explain-wrapper img').setAttribute('src', "")
+                    document.querySelector('.popup-cocktail-explain-wrapper .cocktail-info-box').innerHTML = "등록된 이미지가 없습니다."
+                }
+
             })
         })
         document.querySelector('.ui-close-btn').addEventListener("click", function () {
@@ -240,17 +252,22 @@ var my_callback = function (data) {
         typeArray.forEach((each,_eachIdx)=>{
             if (_eachIdx == 0) {
                 baseGroupHtml = document.createElement("div");
-
                 baseGroupHtml.setAttribute("class","base-group-wrapper "+each.type+"")
-
                 baseGroupHtml.innerHTML = `<div class="box-head"><span class="base-title">${each.type.toUpperCase()}</span></div><div class="box-body"></div>`;
                 swiperHtml.querySelector(".menu-flex-box").appendChild(baseGroupHtml);
             }
-            console.log(each.image)
             var item = `<a href="#none" class="cocktail-item ui-open-info-modal"> <div class="cocktail-name"> <span class="txt">${each.menuName}</span> <span class="ingredients">${each.ingredient}</span> </div> <div class="cociktail-price">${each.price}.</div>    </a>`;
             var itemHtml = document.createElement("div");
             itemHtml.setAttribute('class','cocktail-item-list')
             itemHtml.innerHTML = item;
+            if(each.ingredient !== "") {
+                console.log(each.image.split("/")[5])
+                itemHtml['ingredient'] = each.ingredient;
+            }
+            if(each.image !== "") {
+                console.log(each.image.split("/")[5])
+                itemHtml['image'] = "http://drive.google.com/uc?export=view&id="+each.image.split("/")[5]
+            }
             baseGroupHtml.querySelector(".box-body").appendChild(itemHtml)
             totalItemSize++;
 
@@ -283,6 +300,8 @@ var my_callback = function (data) {
     }
     gloveJS.init();
 }
+
+
 var datas = [];
 
 window.onload = function () {

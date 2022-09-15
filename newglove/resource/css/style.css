@@ -359,6 +359,7 @@
   height: calc(100vh - 200px);
   height: calc(100vh - 20rem);
   display: flex;
+  flex-direction: column;
 }
 .popup-cocktail-explain .cocktail-body .img-box {
   height: 100%;
