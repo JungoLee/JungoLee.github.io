@@ -243,7 +243,7 @@ var my_callback = function (data) {
 
                 baseGroupHtml.setAttribute("class","base-group-wrapper "+each.type+"")
 
-                baseGroupHtml.innerHTML = `<div class="box-head"><span class="base-title">${each.type}</span></div><div class="box-body"></div>`;
+                baseGroupHtml.innerHTML = `<div class="box-head"><span class="base-title">${each.type.toUpperCase()}</span></div><div class="box-body"></div>`;
                 swiperHtml.querySelector(".menu-flex-box").appendChild(baseGroupHtml);
             }
             console.log(each.image)
