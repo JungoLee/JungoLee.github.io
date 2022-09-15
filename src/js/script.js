@@ -175,7 +175,7 @@ jQuery(document).ready(function () {
         if(selectVal == "Show all"){
             $('.content').show();
             return false;
-        }else if(selectVal == "Kakao" || selectVal == "glove_front"){
+        }else if(selectVal == "Kakao" || selectVal == "glovefront"){
 
         }else{
             $('.content').hide();
