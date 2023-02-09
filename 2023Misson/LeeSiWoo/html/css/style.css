@@ -1,0 +1,326 @@
+﻿@charset "utf-8";
+/* CSS Document */
+img{
+  max-width:100%;
+}
+*{
+  box-sizing:border-box;
+}
+*:focus{
+  outline:1px dashed #333;
+}
+
+.hide-txt{
+  font-size:0;
+  position:absolute;
+  opacity:0;
+}
+
+.center-box{
+  width:750px;
+  max-width:100%;
+  margin:0 auto;
+}
+.launching-event-container{
+  overflow:hidden;
+}
+.launching-motion-area{
+  background-color:#96b3ff;
+}
+.launching-motion-area .bg-grey{
+  position:relative;
+}
+.launching-motion-area .bg-grey::after{
+  content:"";
+  position:absolute;
+  height:80%;
+  width:100%;
+  bottom:0;
+  background-color:#bbbdbf;
+}
+
+
+
+.launching-motion-area .event-top-area{
+  position:relative;
+  z-index: 4;
+}
+.launching-motion-area .event-top-area .event-top{
+  position:relative;
+  z-index: 2;
+}
+.launching-motion-area .event-mid-area{
+  position:relative;
+  margin-top: -20px;
+  z-index: 2;
+}
+.launching-motion-area .event-bottom-area{
+  position:relative;
+  z-index: 4;
+  margin-top: -4px;
+}
+
+
+
+
+.ball-choice-box{
+  position:absolute;
+  display:flex;
+  bottom:calc(100% - 10px);
+  padding:0 45px;
+}
+.ball-choice-box .ball{
+  position:relative;
+  transform:scale(1) translateY(-50%);
+  opacity:0;
+  transition:transform .25s ease-out, opacity .25s ease-out;
+}
+
+.ball-choice-box .ball.on{
+  transform:scale(1) translateY(0);
+  opacity:1;
+}
+.ball-choice-box .ball.on:hover{
+  transform:scale(1.1);
+}
+
+.ball-choice-box .ball + .ball{
+  margin-left: 10px;
+}
+.ball-choice-box .ball-img{
+  position:relative;
+  z-index: 2;
+}
+.ball-choice-box .shadow{
+  position:absolute;
+  z-index: 1;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-10px;
+}
+
+
+.ball-pickup-motion-box{
+  width:100%;
+  overflow:hidden;
+  position:absolute;
+  top:94.1%;
+  z-index: 1;
+  display:none;
+}
+.ball-pickup-motion-box .pickup-box{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:26%;
+  height:100%;
+  z-index: 1;
+}
+.ball-pickup-motion-box img{
+  position:absolute;
+}
+.ball-pickup-motion-box .get_subline{
+  width:63%;
+  left:-10%;
+}
+.ball-pickup-motion-box .get_line{
+  width:12%;
+  left:44%;
+  transform: translateY(-95%);
+}
+.ball-pickup-motion-box .get_obj{
+  width:42%;
+  position: relative;
+  position: absolute;
+  left: 30.4%;
+  top:20%;
+}
+.ball-pickup-motion-box::after{
+  content:"";
+  padding-top:51.6%;
+  display:block;
+}
+.ball-pickup-motion-box .pickup-ball-box {
+  position: absolute;
+  top: 100%;
+  width:26%;
+  left:50%;
+  transform:translateX(-50%);
+  transition:transform cubic-bezier(0, 0, 0, 1.05);
+  transition-duration:.5s;
+  transition-delay:.2s;
+}
+.ball-pickup-motion-box .pickup-ball-box .show-ball{
+  position: relative;
+}
+
+
+
+
+
+.launching-motion-area .event-mid-area .mid-img{
+  position:relative;
+  z-index: 2;
+}
+.launching-motion-area .event-mid-area .quiz-text{
+  position:absolute;
+  top:calc(28% + 20px);
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:68.3%;
+  z-index: 2;
+}
+
+.launching-motion-area .event-mid-area [class*="cloud"]{
+  position:absolute;
+  z-index:1;
+  animation:cloudMotion 10s linear backwards normal infinite ;
+}
+.launching-motion-area .event-mid-area .cloud1{
+  top:20%;
+  left:-20%;
+  animation-duration: 6s;
+}
+.launching-motion-area .event-mid-area .cloud2{
+  top:30%;
+  right:20%;
+  animation-duration: 7s;
+  animation-delay:.4s;
+}
+.launching-motion-area .event-mid-area .cloud3{
+  bottom:20%;
+  right:20%;
+  animation-duration: 5s;
+  animation-delay:.3s;
+}
+
+
+
+
+
+.launching-hint-container,.launching-info-container{
+  background-color:#bbbdbf;
+}
+
+.caution-area{
+  margin: 0 auto;
+  width:605px;
+  max-width:100%;
+  padding:30px 20px;
+}
+.caution-title{
+  font-size:26px;
+  color:#705dcf;
+  font-weight:700;
+  font-family: "Nanum Barun Gothic";
+}
+.lists{
+  margin-top:22px;
+}
+.lists .list{
+  font-size:12px;
+  font-family:"OneShinhan";
+  position:relative;
+  padding-left:10px;
+  word-break: keep-all;
+}
+.lists .list + .list{
+  margin-top:5px;
+}
+.lists .list::before{
+  content:"";
+  width:2px;
+  height:2px;
+  background-color:#000;
+  display:inline-block;
+  position:absolute;
+
+  top:8px;
+  left:0;
+}
+#footer{
+  background-color:#bbbdbf;
+  min-height:50px;
+  padding:10px 20px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-size:12px;
+  font-family:"OneShinhan";
+}
+#footer .text{
+  word-break:keep-all;
+  display:inline-block;
+}
+
+.layer-popup-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.layer-popup-container .dimm{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.3);
+}
+.layer-popup-container .layer-popup-content{
+  position:relative;
+  max-width:calc(100% - 40px);
+  transform:translateY(-25%);
+  transition:transform 1s .05s cubic-bezier(0, 0, 0, 1.05);
+}
+.layer-popup-container .layer-popup-content.on{
+
+  transform:translateY(0);
+}
+.layer-popup-container .layer-popup-content button{
+  position:absolute;
+  width:32%;
+  height:17%;
+  bottom:10%;
+  opacity:1;
+
+  z-index: 3;
+  left:calc(50% - .8%);
+  transform:translateX(-50%);
+}
+.layer-popup-container.wrong1  button{
+  bottom:20%;
+  height:19%;
+  left:50%;
+  width:58%;
+}
+.layer-popup-container.wrong2  button{
+  bottom:11.3%;
+
+  width:30.8%;
+}
+@keyframes cloudMotion{
+  0%{
+    transform:translateX(0);
+    opacity:0;
+  }
+  20%{
+    transform:translateX(20%);
+    opacity:1;
+  }
+  80%{
+    transform:translateX(130%);
+    opacity:1;
+  }
+  100%{
+    transform:translateX(150%);
+    opacity:0;
+  }
+
+}
