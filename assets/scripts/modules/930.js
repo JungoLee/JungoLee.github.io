@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuxg_boilerplate_2024=self.webpackChunkuxg_boilerplate_2024||[]).push([[930],{930:(e,r,p)=>{p.r(r),p.d(r,{props:()=>o});var a=p(374);document.querySelector(".swiper-portpolio-container")&&new a.A(".swiper-portpolio-container",{slidesPerView:1.4,centeredSlides:!0,spaceBetween:20});var o={example:"aaa"}}}]);
