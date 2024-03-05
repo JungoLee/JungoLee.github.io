@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+
+.uxg-page-container-main{
+  width:100%;
+  @include rem(margin-top, 24);
+
+  iframe{
+    width:100%;
+    height:100%;
+  }
+  .swiper-slide{
+    position:relative;
+
+  }
+  .frame-box{
+    @include rem(height, 50vh);
+    width:100%;
+  }
+  .option-title{
+    @include rem(font-size, 24);
+    @include rem(margin-top, 12);
+  }
+  .option-sub{
+    @include rem(margin-top, 12);
+    @include rem(font-size, 14);
+  }
+  .option-price{
+    @include rem(margin-top, 8);
+    @include rem(font-size, 16);
+  }
+  .swiper-button-next,.swiper-button-prev{
+    @include rem(width, 50);
+    height:100%;
+    position:absolute;
+    top:0;
+    z-index: 2;
+    &::before,&::after{
+        content:'';
+        position:absolute;
+        @include rem(width, 20);
+        @include rem(height, 2);
+        background-color:#fff;
+        left:calc(50% - 1rem);
+    }
+
+  }
+  .swiper-button-next{
+    left:0;
+    background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(2,2,2,1) 1%,rgba(229,229,229,0) 100%);
+
+
+    &::before{
+        transform:rotate(-45deg);
+        top: calc(50% - .6rem);
+    }
+    &::after{
+        transform:rotate(45deg);
+        top: calc(50% + .6rem);
+    }
+  }
+  .swiper-button-prev{
+    right:0;
+    background: linear-gradient(to right,  rgba(229,229,229,0) 0%,rgba(0,0,0,1) 100%);
+
+
+    &::before{
+        transform:rotate(45deg);
+        top: calc(50% - .6rem);
+    }
+    &::after{
+        transform:rotate(-45deg);
+        top: calc(50% + .6rem);
+    }
+  }
+}
