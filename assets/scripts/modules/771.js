@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkuxg_boilerplate_2024=self.webpackChunkuxg_boilerplate_2024||[]).push([[771],{771:(e,l,u)=>{u.r(l)}}]);
