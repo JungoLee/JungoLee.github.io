@@ -1,6 +1,0 @@
-# .prettierignore
-_*.html
-lib/
-codinglist.js
-component_guide.js
-*.csv

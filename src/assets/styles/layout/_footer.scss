@@ -1,6 +1,0 @@
-@use "../abstracts" as *;
-.uid-footer{
-    text-align:center;
-    @include rem(padding, 120 0);
-    @include rem(font-size, 24);
-}
